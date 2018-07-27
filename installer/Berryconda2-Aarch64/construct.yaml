@@ -6,10 +6,17 @@ channels:
   - http://conda.anaconda.org/conda-forge
 conda_default_channels: 
   - http://conda.anaconda.org/aarch64_gbox
+  - http://conda.anaconda.org/conda-forge
 
 license_file: ../installer_license.txt
 
 specs:
   - python 2.7*
-  - conda
-  - pip
+  - conda  [aarch64]
+  - numpy  [aarch64]
+  - scipy  [aarch64]
+  - pandas [aarch64]
+  - notebook [aarch64]
+  - matplotlib [aarch64]
+  - freetype [aarch64]
+  - pip [aarch64]
