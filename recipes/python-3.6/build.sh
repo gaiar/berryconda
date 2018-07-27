@@ -13,7 +13,6 @@ rm -rf Lib/ensurepip
     --with-tcltk-libs="-L$PREFIX/lib -ltcl8.6 -ltk8.6" \
     CPPFLAGS="-I$PREFIX/include" \
     LDFLAGS="-L$PREFIX/lib -Wl,-rpath=$PREFIX/lib,--no-as-needed"
-
 make -j${CPU_COUNT}
 make install
 ln -s $PREFIX/bin/python3.6 $PREFIX/bin/python
