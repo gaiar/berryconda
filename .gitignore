@@ -1,2 +1,3 @@
 # ignore created Berryconda installer files
 installer/*/*.sh
+nohup.out
