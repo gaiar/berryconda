@@ -1,0 +1,1392 @@
+Adding in variants from internal_defaults
+INFO:conda_build.variants:Adding in variants from internal_defaults
+Adding in variants from /home/pi/conda_build_config.yaml
+INFO:conda_build.variants:Adding in variants from /home/pi/conda_build_config.yaml
+Attempting to finalize metadata for ruamel_yaml
+INFO:conda_build.metadata:Attempting to finalize metadata for ruamel_yaml
+Solving environment: ...working... done
+Solving environment: ...working... done
+BUILD START: ['ruamel_yaml-0.11.14-py35_0.tar.bz2']
+Solving environment: ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl
+
+
+The following NEW packages will be INSTALLED:
+
+    ca-certificates: 2018.4.16-0       gaiar
+    certifi:         2018.4.16-py35_0  gaiar
+    libgcc-ng:       7.2.0-h7a84908_3  local
+    libxcb:          1.13-h14c3975_2   gaiar
+    ncurses:         5.9-0                  
+    openssl:         1.0.2o-0          local
+    pthread-stubs:   0.4-h14c3975_1    gaiar
+    python:          3.5.5-0           gaiar
+    readline:        6.3-0                  
+    setuptools:      40.0.0-py35_1     gaiar
+    sqlite:          3.15.0-0               
+    tk:              8.6.8-0           gaiar
+    xorg-kbproto:    1.0.7-h14c3975_2  gaiar
+    xorg-libx11:     1.6.5-h14c3975_2  gaiar
+    xorg-libxau:     1.0.8-h14c3975_6  gaiar
+    xorg-libxdmcp:   1.1.2-h14c3975_7  gaiar
+    xorg-xproto:     7.0.31-h14c3975_7 gaiar
+    xz:              5.2.2-0                
+    yaml:            0.1.6-0           gaiar
+    zlib:            1.2.11-0          gaiar
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+running install
+running build
+running build_py
+creating build
+creating build/lib.linux-armv7l-3.5
+creating build/lib.linux-armv7l-3.5/ruamel
+copying .ruamel/__init__.py -> build/lib.linux-armv7l-3.5/ruamel
+creating build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./emitter.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./configobjwalker.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./events.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./dumper.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./compat.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./loader.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./cyaml.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./parser_.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./scanner.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./error.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./composer.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./scalarstring.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./representer.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./serializer.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./nodes.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./constructor.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./__init__.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./comments.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./reader.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./main.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./resolver.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./util.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./tokens.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./LICENSE -> build/lib.linux-armv7l-3.5/ruamel/yaml
+running build_ext
+building '_ruamel_yaml' extension
+creating build/temp.linux-armv7l-3.5
+creating build/temp.linux-armv7l-3.5/ext
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m -c ext/_ruamel_yaml.c -o build/temp.linux-armv7l-3.5/ext/_ruamel_yaml.o
+In file included from ext/_ruamel_yaml.c:239:
+ext/_ruamel_yaml.h:10: warning: "PyString_CheckExact" redefined
+ #define PyString_CheckExact PyBytes_CheckExact
+ 
+ext/_ruamel_yaml.c:117: note: this is the location of the previous definition
+   #define PyString_CheckExact          PyUnicode_CheckExact
+ 
+ext/_ruamel_yaml.c: In function ‘__pyx_pf_12_ruamel_yaml_get_version_string’:
+ext/_ruamel_yaml.c:1294:17: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   __pyx_v_value = yaml_get_version_string();
+                 ^
+ext/_ruamel_yaml.c: In function ‘__pyx_pf_12_ruamel_yaml_7CParser___init__’:
+ext/_ruamel_yaml.c:2475:52: warning: passing argument 2 of ‘yaml_parser_set_input’ from incompatible pointer type [-Wincompatible-pointer-types]
+     yaml_parser_set_input((&__pyx_v_self->parser), __pyx_f_12_ruamel_yaml_input_handler, ((void *)__pyx_v_self));
+                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:1368:30: note: expected ‘int (*)(void *, unsigned char *, size_t,  size_t *)’ {aka ‘int (*)(void *, unsigned char *, unsigned int,  unsigned int *)’} but argument is of type ‘int (*)(void *, char *, int,  int *)’
+         yaml_read_handler_t *handler, void *data);
+         ~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:76,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/bytesobject.h:73:57: warning: pointer targets in passing argument 2 of ‘yaml_parser_set_input_string’ differ in signedness [-Wpointer-sign]
+ #define PyBytes_AS_STRING(op) (assert(PyBytes_Check(op)), \
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+                                 (((PyBytesObject *)(op))->ob_sval))
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.h:11:29: note: in expansion of macro ‘PyBytes_AS_STRING’
+ #define PyString_AS_STRING  PyBytes_AS_STRING
+                             ^~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:2716:59: note: in expansion of macro ‘PyString_AS_STRING’
+     yaml_parser_set_input_string((&__pyx_v_self->parser), PyString_AS_STRING(__pyx_v_stream), PyString_GET_SIZE(__pyx_v_stream));
+                                                           ^~~~~~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:1341:1: note: expected ‘const unsigned char *’ but argument is of type ‘char *’
+ yaml_parser_set_input_string(yaml_parser_t *parser,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c: In function ‘__pyx_f_12_ruamel_yaml_7CParser__token_to_object’:
+ext/_ruamel_yaml.c:4482:71: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = PyUnicode_FromString(__pyx_v_token->data.tag_directive.handle); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 416; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:4494:71: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = PyUnicode_FromString(__pyx_v_token->data.tag_directive.prefix); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 417; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:5354:63: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = PyUnicode_FromString(__pyx_v_token->data.alias.value); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 447; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:5428:64: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = PyUnicode_FromString(__pyx_v_token->data.anchor.value); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 450; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:5502:61: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = PyUnicode_FromString(__pyx_v_token->data.tag.handle); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 453; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:5514:61: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = PyUnicode_FromString(__pyx_v_token->data.tag.suffix); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 454; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:5626:64: warning: pointer targets in passing argument 1 of ‘PyUnicode_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = PyUnicode_DecodeUTF8(__pyx_v_token->data.scalar.value, __pyx_v_token->data.scalar.length, __pyx_k_strict); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 459; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:1278:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c: In function ‘__pyx_f_12_ruamel_yaml_7CParser__event_to_object’:
+ext/_ruamel_yaml.c:7352:63: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+         __pyx_t_4 = PyUnicode_FromString(__pyx_v_tag_directive->handle); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 573; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                          ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:7364:63: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+         __pyx_t_4 = PyUnicode_FromString(__pyx_v_tag_directive->prefix); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 574; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                          ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:7583:63: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.alias.anchor); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 585; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:7677:66: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+       __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.scalar.anchor); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 590; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:7718:66: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+       __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.scalar.tag); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 593; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:7739:64: warning: pointer targets in passing argument 1 of ‘PyUnicode_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+     __pyx_t_4 = PyUnicode_DecodeUTF8(__pyx_v_event->data.scalar.value, __pyx_v_event->data.scalar.length, __pyx_k_strict); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 594; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:1278:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:8107:74: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+       __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.sequence_start.anchor); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 619; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:8148:74: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+       __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.sequence_start.tag); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 622; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:8377:73: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+       __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.mapping_start.anchor); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 636; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:8418:73: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+       __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.mapping_start.tag); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 639; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c: In function ‘__pyx_f_12_ruamel_yaml_7CParser__compose_node’:
+ext/_ruamel_yaml.c:10046:75: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_3 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.alias.anchor); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 733; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:10330:76: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_6 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.scalar.anchor); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 749; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:10386:84: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_6 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.sequence_start.anchor); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 752; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:10442:83: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_6 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.mapping_start.anchor); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 755; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c: In function ‘__pyx_f_12_ruamel_yaml_7CParser__compose_scalar_node’:
+ext/_ruamel_yaml.c:11064:74: warning: pointer targets in passing argument 1 of ‘PyUnicode_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+   __pyx_t_2 = PyUnicode_DecodeUTF8(__pyx_v_self->parsed_event.data.scalar.value, __pyx_v_self->parsed_event.data.scalar.length, __pyx_k_strict); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 790; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:1278:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:11265:76: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.scalar.tag); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 803; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c: In function ‘__pyx_f_12_ruamel_yaml_7CParser__compose_sequence_node’:
+ext/_ruamel_yaml.c:11799:84: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_3 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.sequence_start.tag); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 836; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c: In function ‘__pyx_f_12_ruamel_yaml_7CParser__compose_mapping_node’:
+ext/_ruamel_yaml.c:12396:83: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_3 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.mapping_start.tag); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 875; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c: In function ‘__pyx_pf_12_ruamel_yaml_8CEmitter___init__’:
+ext/_ruamel_yaml.c:13603:53: warning: passing argument 2 of ‘yaml_emitter_set_output’ from incompatible pointer type [-Wincompatible-pointer-types]
+   yaml_emitter_set_output((&__pyx_v_self->emitter), __pyx_f_12_ruamel_yaml_output_handler, ((void *)__pyx_v_self));
+                                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:1830:31: note: expected ‘int (*)(void *, unsigned char *, size_t)’ {aka ‘int (*)(void *, unsigned char *, unsigned int)’} but argument is of type ‘int (*)(void *, char *, int)’
+         yaml_write_handler_t *handler, void *data);
+         ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+ext/_ruamel_yaml.c: In function ‘__pyx_f_12_ruamel_yaml_8CEmitter__object_to_event’:
+ext/_ruamel_yaml.c:14981:44: warning: pointer targets in assignment from ‘char *’ to ‘yaml_char_t *’ {aka ‘unsigned char *’} differ in signedness [-Wpointer-sign]
+         __pyx_v_tag_directives_end->handle = PyString_AS_STRING(__pyx_v_handle);
+                                            ^
+ext/_ruamel_yaml.c:15096:44: warning: pointer targets in assignment from ‘char *’ to ‘yaml_char_t *’ {aka ‘unsigned char *’} differ in signedness [-Wpointer-sign]
+         __pyx_v_tag_directives_end->prefix = PyString_AS_STRING(__pyx_v_prefix);
+                                            ^
+ext/_ruamel_yaml.c:15433:62: warning: pointer targets in passing argument 2 of ‘yaml_alias_event_initialize’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = ((yaml_alias_event_initialize(__pyx_v_event, __pyx_v_anchor) == 0) != 0);
+                                                              ^~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:553:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_alias_event_initialize(yaml_event_t *event, yaml_char_t *anchor);
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:16148:63: warning: pointer targets in passing argument 2 of ‘yaml_scalar_event_initialize’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = ((yaml_scalar_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+                                                               ^~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:578:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_scalar_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:16148:79: warning: pointer targets in passing argument 3 of ‘yaml_scalar_event_initialize’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = ((yaml_scalar_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+                                                                               ^~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:578:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_scalar_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:16148:92: warning: pointer targets in passing argument 4 of ‘yaml_scalar_event_initialize’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = ((yaml_scalar_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+                                                                                            ^~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:578:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_scalar_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:16582:71: warning: pointer targets in passing argument 2 of ‘yaml_sequence_start_event_initialize’ differ in signedness [-Wpointer-sign]
+     __pyx_t_3 = ((yaml_sequence_start_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_sequence_style) == 0) != 0);
+                                                                       ^~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:601:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_sequence_start_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:16582:87: warning: pointer targets in passing argument 3 of ‘yaml_sequence_start_event_initialize’ differ in signedness [-Wpointer-sign]
+     __pyx_t_3 = ((yaml_sequence_start_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_sequence_style) == 0) != 0);
+                                                                                       ^~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:601:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_sequence_start_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:17016:70: warning: pointer targets in passing argument 2 of ‘yaml_mapping_start_event_initialize’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = ((yaml_mapping_start_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_mapping_style) == 0) != 0);
+                                                                      ^~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:633:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_mapping_start_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:17016:86: warning: pointer targets in passing argument 3 of ‘yaml_mapping_start_event_initialize’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = ((yaml_mapping_start_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_mapping_style) == 0) != 0);
+                                                                                      ^~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:633:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_mapping_start_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c: In function ‘__pyx_pf_12_ruamel_yaml_8CEmitter_12serialize’:
+ext/_ruamel_yaml.c:18507:42: warning: pointer targets in assignment from ‘char *’ to ‘yaml_char_t *’ {aka ‘unsigned char *’} differ in signedness [-Wpointer-sign]
+       __pyx_v_tag_directives_end->handle = PyString_AS_STRING(__pyx_v_handle);
+                                          ^
+ext/_ruamel_yaml.c:18622:42: warning: pointer targets in assignment from ‘char *’ to ‘yaml_char_t *’ {aka ‘unsigned char *’} differ in signedness [-Wpointer-sign]
+       __pyx_v_tag_directives_end->prefix = PyString_AS_STRING(__pyx_v_prefix);
+                                          ^
+ext/_ruamel_yaml.c: In function ‘__pyx_f_12_ruamel_yaml_8CEmitter__serialize_node’:
+ext/_ruamel_yaml.c:19488:65: warning: pointer targets in passing argument 2 of ‘yaml_alias_event_initialize’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = ((yaml_alias_event_initialize((&__pyx_v_event), __pyx_v_anchor) == 0) != 0);
+                                                                 ^~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:553:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_alias_event_initialize(yaml_event_t *event, yaml_char_t *anchor);
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:20237:68: warning: pointer targets in passing argument 2 of ‘yaml_scalar_event_initialize’ differ in signedness [-Wpointer-sign]
+       __pyx_t_2 = ((yaml_scalar_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+                                                                    ^~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:578:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_scalar_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:20237:84: warning: pointer targets in passing argument 3 of ‘yaml_scalar_event_initialize’ differ in signedness [-Wpointer-sign]
+       __pyx_t_2 = ((yaml_scalar_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+                                                                                    ^~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:578:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_scalar_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:20237:97: warning: pointer targets in passing argument 4 of ‘yaml_scalar_event_initialize’ differ in signedness [-Wpointer-sign]
+       __pyx_t_2 = ((yaml_scalar_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+                                                                                                 ^~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:578:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_scalar_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:20602:76: warning: pointer targets in passing argument 2 of ‘yaml_sequence_start_event_initialize’ differ in signedness [-Wpointer-sign]
+       __pyx_t_2 = ((yaml_sequence_start_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_sequence_style) == 0) != 0);
+                                                                            ^~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:601:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_sequence_start_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:20602:92: warning: pointer targets in passing argument 3 of ‘yaml_sequence_start_event_initialize’ differ in signedness [-Wpointer-sign]
+       __pyx_t_2 = ((yaml_sequence_start_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_sequence_style) == 0) != 0);
+                                                                                            ^~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:601:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_sequence_start_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:21110:75: warning: pointer targets in passing argument 2 of ‘yaml_mapping_start_event_initialize’ differ in signedness [-Wpointer-sign]
+       __pyx_t_2 = ((yaml_mapping_start_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_mapping_style) == 0) != 0);
+                                                                           ^~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:633:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_mapping_start_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:21110:91: warning: pointer targets in passing argument 3 of ‘yaml_mapping_start_event_initialize’ differ in signedness [-Wpointer-sign]
+       __pyx_t_2 = ((yaml_mapping_start_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_mapping_style) == 0) != 0);
+                                                                                           ^~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:633:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_mapping_start_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m -c ext/api.c -o build/temp.linux-armv7l-3.5/ext/api.o
+ext/api.c: In function ‘yaml_document_delete’:
+ext/api.c:1121:7: warning: variable ‘context’ set but not used [-Wunused-but-set-variable]
+     } context;
+       ^~~~~~~
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m -c ext/writer.c -o build/temp.linux-armv7l-3.5/ext/writer.o
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m -c ext/dumper.c -o build/temp.linux-armv7l-3.5/ext/dumper.o
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m -c ext/loader.c -o build/temp.linux-armv7l-3.5/ext/loader.o
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m -c ext/reader.c -o build/temp.linux-armv7l-3.5/ext/reader.o
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m -c ext/scanner.c -o build/temp.linux-armv7l-3.5/ext/scanner.o
+ext/scanner.c: In function ‘yaml_parser_decrease_flow_level’:
+ext/scanner.c:1196:23: warning: variable ‘dummy_key’ set but not used [-Wunused-but-set-variable]
+     yaml_simple_key_t dummy_key;    /* Used to eliminate a compiler warning. */
+                       ^~~~~~~~~
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m -c ext/parser.c -o build/temp.linux-armv7l-3.5/ext/parser.o
+ext/parser.c: In function ‘yaml_parser_parse_block_sequence_entry’:
+ext/parser.c:762:21: warning: variable ‘dummy_mark’ set but not used [-Wunused-but-set-variable]
+         yaml_mark_t dummy_mark;     /* Used to eliminate a compiler warning. */
+                     ^~~~~~~~~~
+ext/parser.c: In function ‘yaml_parser_parse_block_mapping_key’:
+ext/parser.c:872:21: warning: variable ‘dummy_mark’ set but not used [-Wunused-but-set-variable]
+         yaml_mark_t dummy_mark;     /* Used to eliminate a compiler warning. */
+                     ^~~~~~~~~~
+ext/parser.c: In function ‘yaml_parser_parse_flow_sequence_entry’:
+ext/parser.c:955:17: warning: variable ‘dummy_mark’ set but not used [-Wunused-but-set-variable]
+     yaml_mark_t dummy_mark;     /* Used to eliminate a compiler warning. */
+                 ^~~~~~~~~~
+ext/parser.c: In function ‘yaml_parser_parse_flow_mapping_key’:
+ext/parser.c:1107:17: warning: variable ‘dummy_mark’ set but not used [-Wunused-but-set-variable]
+     yaml_mark_t dummy_mark;     /* Used to eliminate a compiler warning. */
+                 ^~~~~~~~~~
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/python3.5m -c ext/emitter.c -o build/temp.linux-armv7l-3.5/ext/emitter.o
+ext/emitter.c: In function ‘yaml_emitter_write_plain_scalar’:
+ext/emitter.c:28:6: warning: value computed is not used [-Wunused-value]
+      && ((emitter->line_break == YAML_CR_BREAK ?                                \
+      ^~
+ext/emitter.c:56:11: note: in expansion of macro ‘PUT_BREAK’
+          (PUT_BREAK(emitter),                                                   \
+           ^~~~~~~~~
+ext/emitter.c:1931:18: note: in expansion of macro ‘WRITE_BREAK’
+             if (!WRITE_BREAK(emitter, string)) return 0;
+                  ^~~~~~~~~~~
+ext/emitter.c: In function ‘yaml_emitter_write_single_quoted_scalar’:
+ext/emitter.c:28:6: warning: value computed is not used [-Wunused-value]
+      && ((emitter->line_break == YAML_CR_BREAK ?                                \
+      ^~
+ext/emitter.c:56:11: note: in expansion of macro ‘PUT_BREAK’
+          (PUT_BREAK(emitter),                                                   \
+           ^~~~~~~~~
+ext/emitter.c:1992:18: note: in expansion of macro ‘WRITE_BREAK’
+             if (!WRITE_BREAK(emitter, string)) return 0;
+                  ^~~~~~~~~~~
+ext/emitter.c: In function ‘yaml_emitter_write_literal_scalar’:
+ext/emitter.c:28:6: warning: value computed is not used [-Wunused-value]
+      && ((emitter->line_break == YAML_CR_BREAK ?                                \
+      ^~
+ext/emitter.c:56:11: note: in expansion of macro ‘PUT_BREAK’
+          (PUT_BREAK(emitter),                                                   \
+           ^~~~~~~~~
+ext/emitter.c:2255:18: note: in expansion of macro ‘WRITE_BREAK’
+             if (!WRITE_BREAK(emitter, string)) return 0;
+                  ^~~~~~~~~~~
+ext/emitter.c: In function ‘yaml_emitter_write_folded_scalar’:
+ext/emitter.c:28:6: warning: value computed is not used [-Wunused-value]
+      && ((emitter->line_break == YAML_CR_BREAK ?                                \
+      ^~
+ext/emitter.c:56:11: note: in expansion of macro ‘PUT_BREAK’
+          (PUT_BREAK(emitter),                                                   \
+           ^~~~~~~~~
+ext/emitter.c:2304:18: note: in expansion of macro ‘WRITE_BREAK’
+             if (!WRITE_BREAK(emitter, string)) return 0;
+                  ^~~~~~~~~~~
+gcc -pthread -shared -L/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib -Wl,-rpath=/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib,--no-as-needed build/temp.linux-armv7l-3.5/ext/_ruamel_yaml.o build/temp.linux-armv7l-3.5/ext/api.o build/temp.linux-armv7l-3.5/ext/writer.o build/temp.linux-armv7l-3.5/ext/dumper.o build/temp.linux-armv7l-3.5/ext/loader.o build/temp.linux-armv7l-3.5/ext/reader.o build/temp.linux-armv7l-3.5/ext/scanner.o build/temp.linux-armv7l-3.5/ext/parser.o build/temp.linux-armv7l-3.5/ext/emitter.o -L/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib -lpython3.5m -o build/lib.linux-armv7l-3.5/_ruamel_yaml.cpython-35m-arm-linux-gnueabihf.so
+running install_lib
+copying _ruamel_yaml.cpython-35m-arm-linux-gnueabihf.so -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages
+Skipping installation of /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/__init__.py (namespace package)
+copying ruamel/yaml/emitter.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/configobjwalker.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/events.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/dumper.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/compat.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/loader.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/cyaml.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/parser_.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/scanner.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/error.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/composer.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/scalarstring.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/representer.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/serializer.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/nodes.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/constructor.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/__init__.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/comments.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/reader.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/LICENSE -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/main.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/resolver.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/util.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/tokens.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/emitter.py to emitter.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/configobjwalker.py to configobjwalker.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/events.py to events.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/dumper.py to dumper.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/compat.py to compat.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/loader.py to loader.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/cyaml.py to cyaml.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/parser_.py to parser_.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/scanner.py to scanner.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/error.py to error.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/composer.py to composer.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/scalarstring.py to scalarstring.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/representer.py to representer.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/serializer.py to serializer.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/nodes.py to nodes.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/constructor.py to constructor.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/__init__.py to __init__.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/comments.py to comments.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/reader.py to reader.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/main.py to main.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/resolver.py to resolver.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/util.py to util.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel/yaml/tokens.py to tokens.cpython-35.pyc
+running install_egg_info
+running egg_info
+creating ruamel.yaml.egg-info
+writing dependency_links to ruamel.yaml.egg-info/dependency_links.txt
+writing top-level names to ruamel.yaml.egg-info/top_level.txt
+writing namespace_packages to ruamel.yaml.egg-info/namespace_packages.txt
+writing ruamel.yaml.egg-info/PKG-INFO
+writing manifest file 'ruamel.yaml.egg-info/SOURCES.txt'
+reading manifest file 'ruamel.yaml.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'ruamel.yaml.egg-info/SOURCES.txt'
+Copying ruamel.yaml.egg-info to /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel.yaml-0.11.7-py3.5.egg-info
+Installing /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/ruamel.yaml-0.11.7-py3.5-nspkg.pth
+running install_scripts
+writing list of installed files to 'record.txt'
+Source cache directory is: /home/pi/pidrive/conda-builds/src_cache
+Downloading source to cache: ruamel_yaml-0.11.7_a705cb1f0e.tar.gz
+Downloading https://bitbucket.org/kalefranz/yaml/get/1CBC6A8.tar.gz
+Success
+Extracting download
+source tree in: /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/work
+
+Resource usage statistics from building ruamel_yaml:
+   Process count: 4
+   CPU time: Sys=0:00:00.6, User=0:00:42.9
+   Memory: 122.4M
+   Disk usage: 7.5K
+   Time elapsed: 0:01:03.4
+
+Packaging ruamel_yaml
+INFO:conda_build.build:Packaging ruamel_yaml
+Packaging ruamel_yaml-0.11.14-py35_0
+INFO:conda_build.build:Packaging ruamel_yaml-0.11.14-py35_0
+compiling .pyc files...
+number of files: 53
+patchelf: file: /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/lib/python3.5/site-packages/_ruamel_yaml.cpython-35m-arm-linux-gnueabihf.so
+    setting rpath to: $ORIGIN/../..
+   INFO (ruamel_yaml,lib/python3.5/site-packages/_ruamel_yaml.cpython-35m-arm-linux-gnueabihf.so): Needed DSO lib/libpython3.5m.so.1.0 found in gaiar::python-3.5.5-0
+WARNING (ruamel_yaml,lib/python3.5/site-packages/_ruamel_yaml.cpython-35m-arm-linux-gnueabihf.so): libpthread.so.0 not found in sysroot, is this binary repackaging? .. do you need to use install_name_tool/patchelf?
+WARNING (ruamel_yaml,lib/python3.5/site-packages/_ruamel_yaml.cpython-35m-arm-linux-gnueabihf.so): libc.so.6 not found in sysroot, is this binary repackaging? .. do you need to use install_name_tool/patchelf?
+Fixing permissions
+Detected hard-coded path in binary file lib/python3.5/site-packages/_ruamel_yaml.cpython-35m-arm-linux-gnueabihf.so
+updating: ruamel_yaml-0.11.14-py35_0.tar.bz2
+TEST START: /home/pi/pidrive/conda-builds/linux-armv7l/ruamel_yaml-0.11.14-py35_0.tar.bz2
+Updating index at /home/pi/pidrive/conda-builds/linux-armv7l to make package installable with dependencies
+INFO:conda_build.build:Updating index at /home/pi/pidrive/conda-builds/linux-armv7l to make package installable with dependencies
+Updating index at /home/pi/pidrive/conda-builds/linux-armv6l to make package installable with dependencies
+INFO:conda_build.build:Updating index at /home/pi/pidrive/conda-builds/linux-armv6l to make package installable with dependencies
+Updating index at /home/pi/pidrive/conda-builds/noarch to make package installable with dependencies
+INFO:conda_build.build:Updating index at /home/pi/pidrive/conda-builds/noarch to make package installable with dependencies
+Adding in variants from /tmp/tmpi6jnabt3/info/recipe/conda_build_config.yaml
+INFO:conda_build.variants:Adding in variants from /tmp/tmpi6jnabt3/info/recipe/conda_build_config.yaml
+Renaming work directory,  /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/work  to  /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/work_moved_ruamel_yaml-0.11.14-py35_0_linux-armv7l
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_test_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold
+
+
+The following NEW packages will be INSTALLED:
+
+    ca-certificates: 2018.4.16-0       gaiar
+    certifi:         2018.4.16-py35_0  gaiar
+    libgcc-ng:       7.2.0-h7a84908_3  local
+    libxcb:          1.13-h14c3975_2   gaiar
+    ncurses:         5.9-0                  
+    openssl:         1.0.2o-0          local
+    pthread-stubs:   0.4-h14c3975_1    gaiar
+    python:          3.5.5-0           gaiar
+    readline:        6.3-0                  
+    ruamel_yaml:     0.11.14-py35_0    local
+    setuptools:      40.0.0-py35_1     gaiar
+    sqlite:          3.15.0-0               
+    tk:              8.6.8-0           gaiar
+    xorg-kbproto:    1.0.7-h14c3975_2  gaiar
+    xorg-libx11:     1.6.5-h14c3975_2  gaiar
+    xorg-libxau:     1.0.8-h14c3975_6  gaiar
+    xorg-libxdmcp:   1.1.2-h14c3975_7  gaiar
+    xorg-xproto:     7.0.31-h14c3975_7 gaiar
+    xz:              5.2.2-0                
+    yaml:            0.1.6-0           gaiar
+    zlib:            1.2.11-0          gaiar
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+import: 'ruamel.yaml'
+
+Resource usage statistics from testing ruamel_yaml:
+   Process count: 1
+   CPU time: Sys=0:00:00.0, User=0:00:00.0
+   Memory: 2.6M
+   Disk usage: 12B
+   Time elapsed: 0:00:02.1
+
+TEST END: /home/pi/pidrive/conda-builds/linux-armv7l/ruamel_yaml-0.11.14-py35_0.tar.bz2
+Renaming work directory,  /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/work  to  /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/work_moved_ruamel_yaml-0.11.14-py35_0_linux-armv7l_main_build_loop
+BUILD START: ['ruamel_yaml-0.11.14-py35_0.tar.bz2']
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env
+
+
+The following NEW packages will be INSTALLED:
+
+    ca-certificates: 2018.4.16-0       gaiar
+    certifi:         2018.4.16-py35_0  gaiar
+    libgcc-ng:       7.2.0-h7a84908_3  local
+    libxcb:          1.13-h14c3975_2   gaiar
+    ncurses:         5.9-0                  
+    openssl:         1.0.2o-0          local
+    pthread-stubs:   0.4-h14c3975_1    gaiar
+    python:          3.5.5-0           gaiar
+    readline:        6.3-0                  
+    setuptools:      40.0.0-py35_1     gaiar
+    sqlite:          3.15.0-0               
+    tk:              8.6.8-0           gaiar
+    xorg-kbproto:    1.0.7-h14c3975_2  gaiar
+    xorg-libx11:     1.6.5-h14c3975_2  gaiar
+    xorg-libxau:     1.0.8-h14c3975_6  gaiar
+    xorg-libxdmcp:   1.1.2-h14c3975_7  gaiar
+    xorg-xproto:     7.0.31-h14c3975_7 gaiar
+    xz:              5.2.2-0                
+    yaml:            0.1.6-0           gaiar
+    zlib:            1.2.11-0          gaiar
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+running install
+running build
+running build_py
+creating build
+creating build/lib.linux-armv7l-3.5
+creating build/lib.linux-armv7l-3.5/ruamel
+copying .ruamel/__init__.py -> build/lib.linux-armv7l-3.5/ruamel
+creating build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./emitter.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./configobjwalker.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./events.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./dumper.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./compat.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./loader.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./cyaml.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./parser_.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./scanner.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./error.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./composer.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./scalarstring.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./representer.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./serializer.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./nodes.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./constructor.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./__init__.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./comments.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./reader.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./main.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./resolver.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./util.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./tokens.py -> build/lib.linux-armv7l-3.5/ruamel/yaml
+copying ./LICENSE -> build/lib.linux-armv7l-3.5/ruamel/yaml
+running build_ext
+building '_ruamel_yaml' extension
+creating build/temp.linux-armv7l-3.5
+creating build/temp.linux-armv7l-3.5/ext
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m -c ext/_ruamel_yaml.c -o build/temp.linux-armv7l-3.5/ext/_ruamel_yaml.o
+In file included from ext/_ruamel_yaml.c:239:
+ext/_ruamel_yaml.h:10: warning: "PyString_CheckExact" redefined
+ #define PyString_CheckExact PyBytes_CheckExact
+ 
+ext/_ruamel_yaml.c:117: note: this is the location of the previous definition
+   #define PyString_CheckExact          PyUnicode_CheckExact
+ 
+ext/_ruamel_yaml.c: In function ‘__pyx_pf_12_ruamel_yaml_get_version_string’:
+ext/_ruamel_yaml.c:1294:17: warning: assignment discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   __pyx_v_value = yaml_get_version_string();
+                 ^
+ext/_ruamel_yaml.c: In function ‘__pyx_pf_12_ruamel_yaml_7CParser___init__’:
+ext/_ruamel_yaml.c:2475:52: warning: passing argument 2 of ‘yaml_parser_set_input’ from incompatible pointer type [-Wincompatible-pointer-types]
+     yaml_parser_set_input((&__pyx_v_self->parser), __pyx_f_12_ruamel_yaml_input_handler, ((void *)__pyx_v_self));
+                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:1368:30: note: expected ‘int (*)(void *, unsigned char *, size_t,  size_t *)’ {aka ‘int (*)(void *, unsigned char *, unsigned int,  unsigned int *)’} but argument is of type ‘int (*)(void *, char *, int,  int *)’
+         yaml_read_handler_t *handler, void *data);
+         ~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:76,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/bytesobject.h:73:57: warning: pointer targets in passing argument 2 of ‘yaml_parser_set_input_string’ differ in signedness [-Wpointer-sign]
+ #define PyBytes_AS_STRING(op) (assert(PyBytes_Check(op)), \
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+                                 (((PyBytesObject *)(op))->ob_sval))
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.h:11:29: note: in expansion of macro ‘PyBytes_AS_STRING’
+ #define PyString_AS_STRING  PyBytes_AS_STRING
+                             ^~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:2716:59: note: in expansion of macro ‘PyString_AS_STRING’
+     yaml_parser_set_input_string((&__pyx_v_self->parser), PyString_AS_STRING(__pyx_v_stream), PyString_GET_SIZE(__pyx_v_stream));
+                                                           ^~~~~~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:1341:1: note: expected ‘const unsigned char *’ but argument is of type ‘char *’
+ yaml_parser_set_input_string(yaml_parser_t *parser,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c: In function ‘__pyx_f_12_ruamel_yaml_7CParser__token_to_object’:
+ext/_ruamel_yaml.c:4482:71: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = PyUnicode_FromString(__pyx_v_token->data.tag_directive.handle); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 416; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:4494:71: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = PyUnicode_FromString(__pyx_v_token->data.tag_directive.prefix); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 417; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:5354:63: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = PyUnicode_FromString(__pyx_v_token->data.alias.value); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 447; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:5428:64: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = PyUnicode_FromString(__pyx_v_token->data.anchor.value); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 450; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:5502:61: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = PyUnicode_FromString(__pyx_v_token->data.tag.handle); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 453; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:5514:61: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = PyUnicode_FromString(__pyx_v_token->data.tag.suffix); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 454; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:5626:64: warning: pointer targets in passing argument 1 of ‘PyUnicode_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = PyUnicode_DecodeUTF8(__pyx_v_token->data.scalar.value, __pyx_v_token->data.scalar.length, __pyx_k_strict); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 459; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:1278:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c: In function ‘__pyx_f_12_ruamel_yaml_7CParser__event_to_object’:
+ext/_ruamel_yaml.c:7352:63: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+         __pyx_t_4 = PyUnicode_FromString(__pyx_v_tag_directive->handle); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 573; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                          ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:7364:63: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+         __pyx_t_4 = PyUnicode_FromString(__pyx_v_tag_directive->prefix); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 574; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                          ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:7583:63: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.alias.anchor); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 585; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:7677:66: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+       __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.scalar.anchor); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 590; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:7718:66: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+       __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.scalar.tag); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 593; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:7739:64: warning: pointer targets in passing argument 1 of ‘PyUnicode_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+     __pyx_t_4 = PyUnicode_DecodeUTF8(__pyx_v_event->data.scalar.value, __pyx_v_event->data.scalar.length, __pyx_k_strict); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 594; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:1278:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:8107:74: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+       __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.sequence_start.anchor); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 619; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:8148:74: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+       __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.sequence_start.tag); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 622; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:8377:73: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+       __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.mapping_start.anchor); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 636; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:8418:73: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+       __pyx_t_4 = PyUnicode_FromString(__pyx_v_event->data.mapping_start.tag); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 639; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c: In function ‘__pyx_f_12_ruamel_yaml_7CParser__compose_node’:
+ext/_ruamel_yaml.c:10046:75: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_3 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.alias.anchor); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 733; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:10330:76: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_6 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.scalar.anchor); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 749; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:10386:84: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_6 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.sequence_start.anchor); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 752; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:10442:83: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_6 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.mapping_start.anchor); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 755; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c: In function ‘__pyx_f_12_ruamel_yaml_7CParser__compose_scalar_node’:
+ext/_ruamel_yaml.c:11064:74: warning: pointer targets in passing argument 1 of ‘PyUnicode_DecodeUTF8’ differ in signedness [-Wpointer-sign]
+   __pyx_t_2 = PyUnicode_DecodeUTF8(__pyx_v_self->parsed_event.data.scalar.value, __pyx_v_self->parsed_event.data.scalar.length, __pyx_k_strict); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 790; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:1278:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_DecodeUTF8(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:11265:76: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.scalar.tag); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 803; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c: In function ‘__pyx_f_12_ruamel_yaml_7CParser__compose_sequence_node’:
+ext/_ruamel_yaml.c:11799:84: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_3 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.sequence_start.tag); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 836; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c: In function ‘__pyx_f_12_ruamel_yaml_7CParser__compose_mapping_node’:
+ext/_ruamel_yaml.c:12396:83: warning: pointer targets in passing argument 1 of ‘PyUnicode_FromString’ differ in signedness [-Wpointer-sign]
+     __pyx_t_3 = PyUnicode_FromString(__pyx_v_self->parsed_event.data.mapping_start.tag); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 875; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+In file included from /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/Python.h:77,
+                 from ext/_ruamel_yaml.c:4:
+/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m/unicodeobject.h:718:23: note: expected ‘const char *’ but argument is of type ‘yaml_char_t *’ {aka ‘unsigned char *’}
+ PyAPI_FUNC(PyObject*) PyUnicode_FromString(
+                       ^~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c: In function ‘__pyx_pf_12_ruamel_yaml_8CEmitter___init__’:
+ext/_ruamel_yaml.c:13603:53: warning: passing argument 2 of ‘yaml_emitter_set_output’ from incompatible pointer type [-Wincompatible-pointer-types]
+   yaml_emitter_set_output((&__pyx_v_self->emitter), __pyx_f_12_ruamel_yaml_output_handler, ((void *)__pyx_v_self));
+                                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:1830:31: note: expected ‘int (*)(void *, unsigned char *, size_t)’ {aka ‘int (*)(void *, unsigned char *, unsigned int)’} but argument is of type ‘int (*)(void *, char *, int)’
+         yaml_write_handler_t *handler, void *data);
+         ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+ext/_ruamel_yaml.c: In function ‘__pyx_f_12_ruamel_yaml_8CEmitter__object_to_event’:
+ext/_ruamel_yaml.c:14981:44: warning: pointer targets in assignment from ‘char *’ to ‘yaml_char_t *’ {aka ‘unsigned char *’} differ in signedness [-Wpointer-sign]
+         __pyx_v_tag_directives_end->handle = PyString_AS_STRING(__pyx_v_handle);
+                                            ^
+ext/_ruamel_yaml.c:15096:44: warning: pointer targets in assignment from ‘char *’ to ‘yaml_char_t *’ {aka ‘unsigned char *’} differ in signedness [-Wpointer-sign]
+         __pyx_v_tag_directives_end->prefix = PyString_AS_STRING(__pyx_v_prefix);
+                                            ^
+ext/_ruamel_yaml.c:15433:62: warning: pointer targets in passing argument 2 of ‘yaml_alias_event_initialize’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = ((yaml_alias_event_initialize(__pyx_v_event, __pyx_v_anchor) == 0) != 0);
+                                                              ^~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:553:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_alias_event_initialize(yaml_event_t *event, yaml_char_t *anchor);
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:16148:63: warning: pointer targets in passing argument 2 of ‘yaml_scalar_event_initialize’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = ((yaml_scalar_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+                                                               ^~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:578:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_scalar_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:16148:79: warning: pointer targets in passing argument 3 of ‘yaml_scalar_event_initialize’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = ((yaml_scalar_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+                                                                               ^~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:578:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_scalar_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:16148:92: warning: pointer targets in passing argument 4 of ‘yaml_scalar_event_initialize’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = ((yaml_scalar_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+                                                                                            ^~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:578:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_scalar_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:16582:71: warning: pointer targets in passing argument 2 of ‘yaml_sequence_start_event_initialize’ differ in signedness [-Wpointer-sign]
+     __pyx_t_3 = ((yaml_sequence_start_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_sequence_style) == 0) != 0);
+                                                                       ^~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:601:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_sequence_start_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:16582:87: warning: pointer targets in passing argument 3 of ‘yaml_sequence_start_event_initialize’ differ in signedness [-Wpointer-sign]
+     __pyx_t_3 = ((yaml_sequence_start_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_sequence_style) == 0) != 0);
+                                                                                       ^~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:601:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_sequence_start_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:17016:70: warning: pointer targets in passing argument 2 of ‘yaml_mapping_start_event_initialize’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = ((yaml_mapping_start_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_mapping_style) == 0) != 0);
+                                                                      ^~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:633:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_mapping_start_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:17016:86: warning: pointer targets in passing argument 3 of ‘yaml_mapping_start_event_initialize’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = ((yaml_mapping_start_event_initialize(__pyx_v_event, __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_mapping_style) == 0) != 0);
+                                                                                      ^~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:633:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_mapping_start_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c: In function ‘__pyx_pf_12_ruamel_yaml_8CEmitter_12serialize’:
+ext/_ruamel_yaml.c:18507:42: warning: pointer targets in assignment from ‘char *’ to ‘yaml_char_t *’ {aka ‘unsigned char *’} differ in signedness [-Wpointer-sign]
+       __pyx_v_tag_directives_end->handle = PyString_AS_STRING(__pyx_v_handle);
+                                          ^
+ext/_ruamel_yaml.c:18622:42: warning: pointer targets in assignment from ‘char *’ to ‘yaml_char_t *’ {aka ‘unsigned char *’} differ in signedness [-Wpointer-sign]
+       __pyx_v_tag_directives_end->prefix = PyString_AS_STRING(__pyx_v_prefix);
+                                          ^
+ext/_ruamel_yaml.c: In function ‘__pyx_f_12_ruamel_yaml_8CEmitter__serialize_node’:
+ext/_ruamel_yaml.c:19488:65: warning: pointer targets in passing argument 2 of ‘yaml_alias_event_initialize’ differ in signedness [-Wpointer-sign]
+     __pyx_t_2 = ((yaml_alias_event_initialize((&__pyx_v_event), __pyx_v_anchor) == 0) != 0);
+                                                                 ^~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:553:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_alias_event_initialize(yaml_event_t *event, yaml_char_t *anchor);
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:20237:68: warning: pointer targets in passing argument 2 of ‘yaml_scalar_event_initialize’ differ in signedness [-Wpointer-sign]
+       __pyx_t_2 = ((yaml_scalar_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+                                                                    ^~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:578:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_scalar_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:20237:84: warning: pointer targets in passing argument 3 of ‘yaml_scalar_event_initialize’ differ in signedness [-Wpointer-sign]
+       __pyx_t_2 = ((yaml_scalar_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+                                                                                    ^~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:578:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_scalar_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:20237:97: warning: pointer targets in passing argument 4 of ‘yaml_scalar_event_initialize’ differ in signedness [-Wpointer-sign]
+       __pyx_t_2 = ((yaml_scalar_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_value, __pyx_v_length, __pyx_v_plain_implicit, __pyx_v_quoted_implicit, __pyx_v_scalar_style) == 0) != 0);
+                                                                                                 ^~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:578:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_scalar_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:20602:76: warning: pointer targets in passing argument 2 of ‘yaml_sequence_start_event_initialize’ differ in signedness [-Wpointer-sign]
+       __pyx_t_2 = ((yaml_sequence_start_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_sequence_style) == 0) != 0);
+                                                                            ^~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:601:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_sequence_start_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:20602:92: warning: pointer targets in passing argument 3 of ‘yaml_sequence_start_event_initialize’ differ in signedness [-Wpointer-sign]
+       __pyx_t_2 = ((yaml_sequence_start_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_sequence_style) == 0) != 0);
+                                                                                            ^~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:601:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_sequence_start_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:21110:75: warning: pointer targets in passing argument 2 of ‘yaml_mapping_start_event_initialize’ differ in signedness [-Wpointer-sign]
+       __pyx_t_2 = ((yaml_mapping_start_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_mapping_style) == 0) != 0);
+                                                                           ^~~~~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:633:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_mapping_start_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ext/_ruamel_yaml.c:21110:91: warning: pointer targets in passing argument 3 of ‘yaml_mapping_start_event_initialize’ differ in signedness [-Wpointer-sign]
+       __pyx_t_2 = ((yaml_mapping_start_event_initialize((&__pyx_v_event), __pyx_v_anchor, __pyx_v_tag, __pyx_v_implicit, __pyx_v_mapping_style) == 0) != 0);
+                                                                                           ^~~~~~~~~~~
+In file included from ext/_ruamel_yaml.h:2,
+                 from ext/_ruamel_yaml.c:239:
+ext/yaml.h:633:1: note: expected ‘yaml_char_t *’ {aka ‘unsigned char *’} but argument is of type ‘char *’
+ yaml_mapping_start_event_initialize(yaml_event_t *event,
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m -c ext/api.c -o build/temp.linux-armv7l-3.5/ext/api.o
+ext/api.c: In function ‘yaml_document_delete’:
+ext/api.c:1121:7: warning: variable ‘context’ set but not used [-Wunused-but-set-variable]
+     } context;
+       ^~~~~~~
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m -c ext/writer.c -o build/temp.linux-armv7l-3.5/ext/writer.o
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m -c ext/dumper.c -o build/temp.linux-armv7l-3.5/ext/dumper.o
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m -c ext/loader.c -o build/temp.linux-armv7l-3.5/ext/loader.o
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m -c ext/reader.c -o build/temp.linux-armv7l-3.5/ext/reader.o
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m -c ext/scanner.c -o build/temp.linux-armv7l-3.5/ext/scanner.o
+ext/scanner.c: In function ‘yaml_parser_decrease_flow_level’:
+ext/scanner.c:1196:23: warning: variable ‘dummy_key’ set but not used [-Wunused-but-set-variable]
+     yaml_simple_key_t dummy_key;    /* Used to eliminate a compiler warning. */
+                       ^~~~~~~~~
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m -c ext/parser.c -o build/temp.linux-armv7l-3.5/ext/parser.o
+ext/parser.c: In function ‘yaml_parser_parse_block_sequence_entry’:
+ext/parser.c:762:21: warning: variable ‘dummy_mark’ set but not used [-Wunused-but-set-variable]
+         yaml_mark_t dummy_mark;     /* Used to eliminate a compiler warning. */
+                     ^~~~~~~~~~
+ext/parser.c: In function ‘yaml_parser_parse_block_mapping_key’:
+ext/parser.c:872:21: warning: variable ‘dummy_mark’ set but not used [-Wunused-but-set-variable]
+         yaml_mark_t dummy_mark;     /* Used to eliminate a compiler warning. */
+                     ^~~~~~~~~~
+ext/parser.c: In function ‘yaml_parser_parse_flow_sequence_entry’:
+ext/parser.c:955:17: warning: variable ‘dummy_mark’ set but not used [-Wunused-but-set-variable]
+     yaml_mark_t dummy_mark;     /* Used to eliminate a compiler warning. */
+                 ^~~~~~~~~~
+ext/parser.c: In function ‘yaml_parser_parse_flow_mapping_key’:
+ext/parser.c:1107:17: warning: variable ‘dummy_mark’ set but not used [-Wunused-but-set-variable]
+     yaml_mark_t dummy_mark;     /* Used to eliminate a compiler warning. */
+                 ^~~~~~~~~~
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/include/python3.5m -c ext/emitter.c -o build/temp.linux-armv7l-3.5/ext/emitter.o
+ext/emitter.c: In function ‘yaml_emitter_write_plain_scalar’:
+ext/emitter.c:28:6: warning: value computed is not used [-Wunused-value]
+      && ((emitter->line_break == YAML_CR_BREAK ?                                \
+      ^~
+ext/emitter.c:56:11: note: in expansion of macro ‘PUT_BREAK’
+          (PUT_BREAK(emitter),                                                   \
+           ^~~~~~~~~
+ext/emitter.c:1931:18: note: in expansion of macro ‘WRITE_BREAK’
+             if (!WRITE_BREAK(emitter, string)) return 0;
+                  ^~~~~~~~~~~
+ext/emitter.c: In function ‘yaml_emitter_write_single_quoted_scalar’:
+ext/emitter.c:28:6: warning: value computed is not used [-Wunused-value]
+      && ((emitter->line_break == YAML_CR_BREAK ?                                \
+      ^~
+ext/emitter.c:56:11: note: in expansion of macro ‘PUT_BREAK’
+          (PUT_BREAK(emitter),                                                   \
+           ^~~~~~~~~
+ext/emitter.c:1992:18: note: in expansion of macro ‘WRITE_BREAK’
+             if (!WRITE_BREAK(emitter, string)) return 0;
+                  ^~~~~~~~~~~
+ext/emitter.c: In function ‘yaml_emitter_write_literal_scalar’:
+ext/emitter.c:28:6: warning: value computed is not used [-Wunused-value]
+      && ((emitter->line_break == YAML_CR_BREAK ?                                \
+      ^~
+ext/emitter.c:56:11: note: in expansion of macro ‘PUT_BREAK’
+          (PUT_BREAK(emitter),                                                   \
+           ^~~~~~~~~
+ext/emitter.c:2255:18: note: in expansion of macro ‘WRITE_BREAK’
+             if (!WRITE_BREAK(emitter, string)) return 0;
+                  ^~~~~~~~~~~
+ext/emitter.c: In function ‘yaml_emitter_write_folded_scalar’:
+ext/emitter.c:28:6: warning: value computed is not used [-Wunused-value]
+      && ((emitter->line_break == YAML_CR_BREAK ?                                \
+      ^~
+ext/emitter.c:56:11: note: in expansion of macro ‘PUT_BREAK’
+          (PUT_BREAK(emitter),                                                   \
+           ^~~~~~~~~
+ext/emitter.c:2304:18: note: in expansion of macro ‘WRITE_BREAK’
+             if (!WRITE_BREAK(emitter, string)) return 0;
+                  ^~~~~~~~~~~
+gcc -pthread -shared -L/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib -Wl,-rpath=/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib,--no-as-needed build/temp.linux-armv7l-3.5/ext/_ruamel_yaml.o build/temp.linux-armv7l-3.5/ext/api.o build/temp.linux-armv7l-3.5/ext/writer.o build/temp.linux-armv7l-3.5/ext/dumper.o build/temp.linux-armv7l-3.5/ext/loader.o build/temp.linux-armv7l-3.5/ext/reader.o build/temp.linux-armv7l-3.5/ext/scanner.o build/temp.linux-armv7l-3.5/ext/parser.o build/temp.linux-armv7l-3.5/ext/emitter.o -L/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib -lpython3.5m -o build/lib.linux-armv7l-3.5/_ruamel_yaml.cpython-35m-arm-linux-gnueabihf.so
+running install_lib
+copying _ruamel_yaml.cpython-35m-arm-linux-gnueabihf.so -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages
+Skipping installation of /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/__init__.py (namespace package)
+copying ruamel/yaml/emitter.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/configobjwalker.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/events.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/dumper.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/compat.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/loader.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/cyaml.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/parser_.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/scanner.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/error.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/composer.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/scalarstring.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/representer.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/serializer.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/nodes.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/constructor.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/__init__.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/comments.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/reader.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/LICENSE -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/main.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/resolver.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/util.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+copying ruamel/yaml/tokens.py -> /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/emitter.py to emitter.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/configobjwalker.py to configobjwalker.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/events.py to events.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/dumper.py to dumper.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/compat.py to compat.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/loader.py to loader.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/cyaml.py to cyaml.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/parser_.py to parser_.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/scanner.py to scanner.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/error.py to error.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/composer.py to composer.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/scalarstring.py to scalarstring.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/representer.py to representer.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/serializer.py to serializer.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/nodes.py to nodes.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/constructor.py to constructor.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/__init__.py to __init__.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/comments.py to comments.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/reader.py to reader.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/main.py to main.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/resolver.py to resolver.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/util.py to util.cpython-35.pyc
+byte-compiling /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel/yaml/tokens.py to tokens.cpython-35.pyc
+running install_egg_info
+running egg_info
+creating ruamel.yaml.egg-info
+writing dependency_links to ruamel.yaml.egg-info/dependency_links.txt
+writing ruamel.yaml.egg-info/PKG-INFO
+writing namespace_packages to ruamel.yaml.egg-info/namespace_packages.txt
+writing top-level names to ruamel.yaml.egg-info/top_level.txt
+writing manifest file 'ruamel.yaml.egg-info/SOURCES.txt'
+reading manifest file 'ruamel.yaml.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'ruamel.yaml.egg-info/SOURCES.txt'
+Copying ruamel.yaml.egg-info to /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel.yaml-0.11.7-py3.5.egg-info
+Installing /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env/lib/python3.5/site-packages/ruamel.yaml-0.11.7-py3.5-nspkg.pth
+running install_scripts
+writing list of installed files to 'record.txt'
+Source cache directory is: /home/pi/pidrive/conda-builds/src_cache
+Found source in cache: ruamel_yaml-0.11.7_a705cb1f0e.tar.gz
+Extracting download
+source tree in: /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/work
+
+Resource usage statistics from building ruamel_yaml:
+   Process count: 4
+   CPU time: Sys=0:00:00.5, User=0:00:41.6
+   Memory: 122.6M
+   Disk usage: 7.5K
+   Time elapsed: 0:00:57.5
+
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env
+
+
+The following NEW packages will be INSTALLED:
+
+    ca-certificates: 2018.4.16-0       gaiar
+    certifi:         2018.4.16-py35_0  gaiar
+    libgcc-ng:       7.2.0-h7a84908_3  local
+    libxcb:          1.13-h14c3975_2   gaiar
+    ncurses:         5.9-0                  
+    openssl:         1.0.2o-0          local
+    pthread-stubs:   0.4-h14c3975_1    gaiar
+    python:          3.5.5-0           gaiar
+    readline:        6.3-0                  
+    setuptools:      40.0.0-py35_1     gaiar
+    sqlite:          3.15.0-0               
+    tk:              8.6.8-0           gaiar
+    xorg-kbproto:    1.0.7-h14c3975_2  gaiar
+    xorg-libx11:     1.6.5-h14c3975_2  gaiar
+    xorg-libxau:     1.0.8-h14c3975_6  gaiar
+    xorg-libxdmcp:   1.1.2-h14c3975_7  gaiar
+    xorg-xproto:     7.0.31-h14c3975_7 gaiar
+    xz:              5.2.2-0                
+    yaml:            0.1.6-0           gaiar
+    zlib:            1.2.11-0          gaiar
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+No files or script found for output ruamel_yaml
+WARNING:conda_build.build:No files or script found for output ruamel_yaml
+number of files: 0
+Fixing permissions
+updating: ruamel_yaml-0.11.14-py35_0.tar.bz2
+TEST START: /home/pi/pidrive/conda-builds/linux-armv6l/ruamel_yaml-0.11.14-py35_0.tar.bz2
+Adding in variants from /tmp/tmp_xaebjyu/info/recipe/conda_build_config.yaml
+INFO:conda_build.variants:Adding in variants from /tmp/tmp_xaebjyu/info/recipe/conda_build_config.yaml
+Renaming build prefix directory,  /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_build_env  to  /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/build_prefix_moved_ruamel_yaml-0.11.14-py35_0_linux-armv7l
+Renaming work directory,  /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/work  to  /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/work_moved_ruamel_yaml-0.11.14-py35_0_linux-armv6l
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/_test_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold
+
+
+The following NEW packages will be INSTALLED:
+
+    ca-certificates: 2018.4.16-0           
+    certifi:         2018.4.16-py35_0      
+    ncurses:         5.9-0                 
+    openssl:         1.0.2o-0         local
+    python:          3.5.5-0               
+    readline:        6.3-0                 
+    ruamel_yaml:     0.11.14-py35_0   local
+    setuptools:      40.0.0-py35_1         
+    sqlite:          3.15.0-0              
+    tk:              8.6.6-0               
+    xz:              5.2.2-0               
+    yaml:            0.1.6-0               
+    zlib:            1.2.11-0              
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+import: 'ruamel.yaml'
+Traceback (most recent call last):
+  File "/home/pi/pidrive/conda-builds/ruamel_yaml_1533502107284/test_tmp/run_test.py", line 2, in <module>
+    import ruamel.yaml
+ImportError: No module named 'ruamel'
+Tests failed for ruamel_yaml-0.11.14-py35_0.tar.bz2 - moving package to /home/pi/pidrive/conda-builds/broken
+WARNING:conda_build.build:Tests failed for ruamel_yaml-0.11.14-py35_0.tar.bz2 - moving package to /home/pi/pidrive/conda-builds/broken
+removing: ruamel_yaml-0.11.14-py35_0.tar.bz2
+TESTS FAILED: ruamel_yaml-0.11.14-py35_0.tar.bz2

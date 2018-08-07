@@ -1,4 +1,4 @@
-{% set commit="linux-target-2" %}
+{% set commit="linux-target-3" %}
 
 package:
   name: crosstool-ng
@@ -29,7 +29,7 @@ requirements:
     # a pythonic implementation from Anatoly Techtonik. At present, conda is installing
     # the latter unless I force the version(trying without this now, I believe Ilan may
     # have removed Anatoly's?
-    - wget
+#    - wget
   run:
     - ncurses
     - libtool
@@ -45,3 +45,4 @@ extra:
   recipe-maintainers:
     - mingwandroid
     - msarahan
+

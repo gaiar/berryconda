@@ -1,0 +1,894 @@
+Adding in variants from internal_defaults
+INFO:conda_build.variants:Adding in variants from internal_defaults
+Adding in variants from /home/pi/conda_build_config.yaml
+INFO:conda_build.variants:Adding in variants from /home/pi/conda_build_config.yaml
+Adding in variants from conda_build_config.rpi3_arm64.yaml
+INFO:conda_build.variants:Adding in variants from conda_build_config.rpi3_arm64.yaml
+Attempting to finalize metadata for binutils_impl_linux-aarch64
+INFO:conda_build.metadata:Attempting to finalize metadata for binutils_impl_linux-aarch64
+Attempting to finalize metadata for duma_linux-aarch64
+INFO:conda_build.metadata:Attempting to finalize metadata for duma_linux-aarch64
+Attempting to finalize metadata for gdb_linux-aarch64
+INFO:conda_build.metadata:Attempting to finalize metadata for gdb_linux-aarch64
+Attempting to finalize metadata for libgcc-ng
+INFO:conda_build.metadata:Attempting to finalize metadata for libgcc-ng
+Attempting to finalize metadata for libgfortran-ng
+INFO:conda_build.metadata:Attempting to finalize metadata for libgfortran-ng
+Attempting to finalize metadata for libstdcxx-ng
+INFO:conda_build.metadata:Attempting to finalize metadata for libstdcxx-ng
+Attempting to finalize metadata for gcc_impl_linux-aarch64
+INFO:conda_build.metadata:Attempting to finalize metadata for gcc_impl_linux-aarch64
+Attempting to finalize metadata for gfortran_impl_linux-aarch64
+INFO:conda_build.metadata:Attempting to finalize metadata for gfortran_impl_linux-aarch64
+Attempting to finalize metadata for gxx_impl_linux-aarch64
+INFO:conda_build.metadata:Attempting to finalize metadata for gxx_impl_linux-aarch64
+BUILD START: ['binutils_impl_linux-aarch64-2.28.1-h3693392_3.tar.bz2', 'duma_linux-aarch64-2.5.15-he6fb98e_3.tar.bz2', 'gdb_linux-aarch64-7.12.1-h9524cc7_3.tar.bz2', 'libgcc-ng-7.2.0-hca8aa85_3.tar.bz2', 'libgfortran-ng-7.2.0-hca8aa85_3.tar.bz2', 'libstdcxx-ng-7.2.0-hca8aa85_3.tar.bz2', 'gcc_impl_linux-aarch64-7.2.0-h51c90bb_3.tar.bz2', 'gfortran_impl_linux-aarch64-7.2.0-hca8aa85_3.tar.bz2', 'gxx_impl_linux-aarch64-7.2.0-hca8aa85_3.tar.bz2']
+Solving environment: ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /home/pi/pidrive/conda-builds/compilers_linux-aarch64_1533502005557/_build_env
+
+
+The following NEW packages will be INSTALLED:
+
+    crosstool-ng: 1.23.0.rc2.diorcety.linux_target_3-h14c3975_4 local
+    libgcc-ng:    7.2.0-h7a84908_3                              local
+    libtool:      2.4.6-0                                       gaiar
+    ncurses:      6.1-0                                         gaiar
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+  CONF  aarch64-rpi3-linux-gnu
+#
+# configuration written to .config
+#
+
+***********************************************************
+
+Initially reported by: Bryan Hundven
+URL: 
+
+Comment:
+Raspberry PI 3 aarch64
+
+***********************************************************
+
+Now configured for "aarch64-rpi3-linux-gnu"
+_FAMILY linux
+_FVAL 3.10
+_FAMILY glibc
+_FVAL 2.24
+_FAMILY gcc
+_FVAL 7.2.0
+_FAMILY binutils
+_FVAL 2.28.1
+_FAMILY 1.14
+_FVAL 1.14
+_FAMILY=1.14, _FVAL=1.14
+_FAMILY 0.19.7
+_FVAL 0.19.7
+_FAMILY=0.19.7, _FVAL=0.19.7
+_FAMILY 6.1.2
+_FVAL 6.1.2
+_FAMILY=6.1.2, _FVAL=6.1.2
+_FAMILY 3.1.5
+_FVAL 3.1.5
+_FAMILY=3.1.5, _FVAL=3.1.5
+_FAMILY 0.18
+_FVAL 0.18
+_FAMILY=0.18, _FVAL=0.18
+_FAMILY 1.0.3a
+_FVAL 1.0.3a
+_FAMILY=1.0.3a, _FVAL=1.0.3a
+_FAMILY 6.0
+_FVAL 6.0
+_FAMILY=6.0, _FVAL=6.0
+_FAMILY duma
+_FVAL 2_5_15
+CT_DISABLE_MULTILIB_LIB_OSDIRNAMES=y
+CT_DISABLE_MULTILIB_LIB_OSDIRNAMES=y
+CT_CC_GCC_USE_LTO=y
+CT_CC_GCC_USE_LTO=y
+  CONF  oldconfig
+.config:713:warning: override: reassigning to symbol OBSOLETE
+.config:714:warning: override: reassigning to symbol EXPERIMENTAL
+.config:715:warning: override: reassigning to symbol LOCAL_TARBALLS_DIR
+.config:716:warning: override: reassigning to symbol SAVE_TARBALLS
+.config:717:warning: override: reassigning to symbol PREFIX_DIR
+.config:718:warning: override: reassigning to symbol FORCE_SYSROOT
+.config:719:warning: override: reassigning to symbol ARCH_CPU
+.config:722:warning: override: reassigning to symbol STATIC_TOOLCHAIN
+.config:723:warning: override: reassigning to symbol CC_LANG_CXX
+.config:724:warning: override: reassigning to symbol CC_LANG_FORTRAN
+.config:727:warning: override: reassigning to symbol DEBUG_DUMA
+.config:730:warning: override: reassigning to symbol DEBUG_GDB
+.config:731:warning: override: reassigning to symbol GDB_NATIVE
+.config:733:warning: override: reassigning to symbol GDB_GDBSERVER
+.config:734:warning: override: reassigning to symbol GDB_GDBSERVER_HAS_IPA_LIB
+.config:736:warning: override: reassigning to symbol DISABLE_MULTILIB_LIB_OSDIRNAMES
+.config:737:warning: override: reassigning to symbol CC_GCC_LIBGOMP
+.config:738:warning: override: reassigning to symbol CC_GCC_LIBQUADMATH
+.config:739:warning: override: reassigning to symbol CC_GCC_USE_LTO
+.config:740:warning: override: reassigning to symbol CC_GCC_LIBSANITIZER
+.config:741:warning: override: reassigning to symbol CC_GCC_ENABLE_PLUGINS
+.config:742:warning: override: reassigning to symbol CC_GCC_EXTRA_CONFIG_ARRAY
+.config:743:warning: override: reassigning to symbol BINUTILS_PLUGINS
+.config:744:warning: override: reassigning to symbol DEBUG_GDB
+.config:745:warning: override: reassigning to symbol GDB_CROSS
+.config:746:warning: override: reassigning to symbol GDB_CROSS_STATIC
+.config:747:warning: override: reassigning to symbol GDB_NATIVE_STATIC
+.config:748:warning: override: reassigning to symbol GDB_GDBSERVER
+.config:749:warning: override: reassigning to symbol GDB_GDBSERVER_HAS_IPA_LIB
+.config:750:warning: override: reassigning to symbol GDB_GDBSERVER_STATIC
+.config:751:warning: override: reassigning to symbol BINUTILS_HAS_GOLD
+.config:752:warning: override: reassigning to symbol BINUTILS_GOLD_SUPPORT
+.config:753:warning: override: reassigning to symbol BINUTILS_LINKER_LD_GOLD
+.config:753:warning: override: BINUTILS_LINKER_LD_GOLD changes choice state
+.config:754:warning: override: reassigning to symbol BINUTILS_LINKERS_LIST
+.config:755:warning: override: reassigning to symbol GDB_NATIVE
+.config:756:warning: override: reassigning to symbol GDB_CROSS_PYTHON
+.config:757:warning: override: reassigning to symbol GDB_HAS_PYTHON
+.config:758:warning: override: reassigning to symbol DEBUG_DUMA
+.config:759:warning: override: reassigning to symbol DUMA_SO
+.config:760:warning: override: reassigning to symbol DUMA_CUSTOM_WRAPPER
+.config:761:warning: override: reassigning to symbol TARGET_VENDOR
+.config:763:warning: override: reassigning to symbol KERNEL
+.config:764:warning: override: reassigning to symbol KERNEL_LINUX
+.config:764:warning: override: KERNEL_LINUX changes choice state
+.config:766:warning: override: reassigning to symbol LINUX_V_3_10
+.config:766:warning: override: LINUX_V_3_10 changes choice state
+.config:767:warning: override: reassigning to symbol LIBC
+.config:768:warning: override: reassigning to symbol LIBC_GLIBC
+.config:768:warning: override: LIBC_GLIBC changes choice state
+.config:770:warning: override: reassigning to symbol GLIBC_V_2_24
+.config:770:warning: override: GLIBC_V_2_24 changes choice state
+.config:771:warning: override: reassigning to symbol CC
+.config:772:warning: override: reassigning to symbol CC_GCC
+.config:772:warning: override: CC_GCC changes choice state
+.config:775:warning: override: reassigning to symbol BINUTILS
+.config:776:warning: override: reassigning to symbol BINUTILS_BINUTILS
+.config:776:warning: override: BINUTILS_BINUTILS changes choice state
+.config:777:warning: override: reassigning to symbol BINUTILS_VERSION
+.config:778:warning: override: reassigning to symbol BINUTILS_V_2_28_1
+.config:778:warning: override: BINUTILS_V_2_28_1 changes choice state
+.config:779:warning: override: reassigning to symbol LIBICONV_NEEDED
+.config:780:warning: override: reassigning to symbol LIBICONV
+.config:781:warning: override: LIBICONV_V_1_14 changes choice state
+.config:782:warning: override: reassigning to symbol GETTEXT_NEEDED
+.config:783:warning: override: reassigning to symbol GETTEXT
+.config:784:warning: override: GETTEXT_V_0_19_7 changes choice state
+.config:785:warning: override: reassigning to symbol GMP_NEEDED
+.config:786:warning: override: reassigning to symbol GMP
+.config:787:warning: override: reassigning to symbol GMP_V_6_1_2
+.config:787:warning: override: GMP_V_6_1_2 changes choice state
+.config:788:warning: override: reassigning to symbol MPFR_NEEDED
+.config:789:warning: override: reassigning to symbol MPFR
+.config:791:warning: override: reassigning to symbol ISL_NEEDED
+.config:792:warning: override: reassigning to symbol ISL
+.config:793:warning: override: reassigning to symbol ISL_V_0_18
+.config:793:warning: override: ISL_V_0_18 changes choice state
+.config:794:warning: override: reassigning to symbol MPC_NEEDED
+.config:795:warning: override: reassigning to symbol MPC
+.config:797:warning: override: reassigning to symbol NCURSES_NEEDED
+.config:798:warning: override: reassigning to symbol NCURSES
+.config:799:warning: override: reassigning to symbol NCURSES_V_6_0
+.config:799:warning: override: NCURSES_V_6_0 changes choice state
+.config:806:warning: override: reassigning to symbol LIBC_SUPPORT_THREADS_ANY
+.config:807:warning: override: reassigning to symbol LIBC_SUPPORT_THREADS_NATIVE
+*
+* Restart config...
+*
+*
+* Paths and misc options
+*
+*
+* crosstool-NG behavior
+*
+Use obsolete features (OBSOLETE) [Y/n/?] y
+Try features marked as EXPERIMENTAL (EXPERIMENTAL) [Y/n/?] y
+  Allow building as root user (READ HELP!) (ALLOW_BUILD_AS_ROOT) [Y/n/?] y
+    Are you sure? (ALLOW_BUILD_AS_ROOT_SURE) [Y/n] y
+Debug crosstool-NG (DEBUG_CT) [N/y/?] n
+*
+* Paths
+*
+Local tarballs directory (LOCAL_TARBALLS_DIR) [/home/pi/berryconda3/conda-bld/src_cache] /home/pi/berryconda3/conda-bld/src_cache
+  Save new tarballs (SAVE_TARBALLS) [Y/n/?] y
+Working directory (WORK_DIR) [${CT_TOP_DIR}/.build] ${CT_TOP_DIR}/.build
+Prefix directory (PREFIX_DIR) [${CT_TOP_DIR}/gcc_built] ${CT_TOP_DIR}/gcc_built
+  Remove the prefix dir prior to building (RM_RF_PREFIX_DIR) [Y/n/?] y
+Remove documentation (REMOVE_DOCS) [Y/n/?] y
+Render the toolchain read-only (PREFIX_DIR_RO) [Y/n/?] y
+Strip host toolchain executables (STRIP_HOST_TOOLCHAIN_EXECUTABLES) [Y/n/?] y
+Strip target toolchain executables (STRIP_TARGET_TOOLCHAIN_EXECUTABLES) [N/y/?] n
+*
+* Downloading
+*
+Download agent
+> 1. wget (DOWNLOAD_AGENT_WGET)
+  2. curl (DOWNLOAD_AGENT_CURL)
+  3. none (forbid download) (DOWNLOAD_AGENT_NONE)
+choice[1-3]: 1
+Forbid downloads (FORBID_DOWNLOAD) [N/y/?] n
+  Force downloads (FORCE_DOWNLOAD) [N/y/?] n
+  Connection timeout (CONNECT_TIMEOUT) [10] 10
+  Extra options to wget (DOWNLOAD_WGET_OPTIONS) [--passive-ftp --tries=3 -nc --progress=dot:binary] --passive-ftp --tries=3 -nc --progress=dot:binary
+  Stop after downloading tarballs (ONLY_DOWNLOAD) [N/y/?] n
+  Use a mirror (USE_MIRROR) [N/y/?] n
+  Verify download digests (checksums) (VERIFY_DOWNLOAD_DIGEST) [Y/n] y
+    Digest algorithm
+    > 1. SHA-512 (VERIFY_DOWNLOAD_DIGEST_SHA512)
+      2. SHA-256 (VERIFY_DOWNLOAD_DIGEST_SHA256)
+      3. SHA-1 (VERIFY_DOWNLOAD_DIGEST_SHA1)
+      4. MD5 (VERIFY_DOWNLOAD_DIGEST_MD5)
+    choice[1-4]: 1
+  Verify detached signatures (VERIFY_DOWNLOAD_SIGNATURE) [N/y/?] n
+*
+* Extracting
+*
+Force extractions (FORCE_EXTRACT) [N/y/?] n
+Override config.{guess,sub} (OVERRIDE_CONFIG_GUESS_SUB) [Y/n/?] y
+Stop after extracting tarballs (ONLY_EXTRACT) [N/y/?] n
+Patches origin
+> 1. Bundled only (PATCH_BUNDLED)
+  2. Local only (EXPERIMENTAL) (PATCH_LOCAL) (NEW)
+  3. Bundled, then local (PATCH_BUNDLED_LOCAL)
+  4. Local, then bundled (PATCH_LOCAL_BUNDLED) (NEW)
+  5. None (PATCH_NONE) (NEW)
+choice[1-5]: 
+*
+* Build behavior
+*
+Number of parallel jobs (PARALLEL_JOBS) [0] 0
+Maximum allowed load (LOAD) [] 
+Use -pipe (USE_PIPES) [Y/n/?] y
+Extra build compiler flags (EXTRA_CFLAGS_FOR_BUILD) [] 
+Extra build linker flags (EXTRA_LDFLAGS_FOR_BUILD) [] 
+Extra host compiler flags (EXTRA_CFLAGS_FOR_HOST) [] 
+Extra host linker flags (EXTRA_LDFLAGS_FOR_HOST) [] 
+Shell to use as CONFIG_SHELL
+  1. sh (the system shell) (CONFIG_SHELL_SH)
+  2. ash (READ HELP!) (CONFIG_SHELL_ASH)
+> 3. bash (CONFIG_SHELL_BASH)
+  4. custom shell (CONFIG_SHELL_CUSTOM)
+choice[1-4]: 3
+*
+* Logging
+*
+Maximum log level to see:
+  1. ERROR (LOG_ERROR)
+  2. WARN (LOG_WARN)
+  3. INFO (LOG_INFO)
+> 4. EXTRA (LOG_EXTRA)
+  5. ALL (LOG_ALL)
+  6. DEBUG (LOG_DEBUG)
+choice[1-6]: 4
+Warnings from the tools' builds (LOG_SEE_TOOLS_WARN) [N/y/?] n
+Progress bar (LOG_PROGRESS_BAR) [Y/n/?] y
+Log to a file (LOG_TO_FILE) [Y/n/?] y
+  Compress the log file (LOG_FILE_COMPRESS) [Y/n/?] y
+*
+* Target options
+*
+Target Architecture
+  1. alpha (ARCH_ALPHA)
+  2. arc (ARCH_ARC)
+> 3. arm (ARCH_ARM)
+  4. avr (ARCH_AVR)
+  5. m68k (ARCH_M68K)
+  6. microblaze (ARCH_MICROBLAZE) (NEW)
+  7. mips (ARCH_MIPS)
+  8. msp430 (ARCH_MSP430) (NEW)
+  9. nios2 (ARCH_NIOS2)
+  10. powerpc (ARCH_POWERPC)
+  11. riscv (ARCH_RISCV) (NEW)
+  12. s390 (ARCH_S390)
+  13. sh (ARCH_SH)
+  14. sparc (ARCH_SPARC)
+  15. x86 (ARCH_X86)
+  16. xtensa (ARCH_XTENSA)
+choice[1-16]: 
+Suffix to the arch-part (ARCH_SUFFIX) [] 
+*
+* Generic target options
+*
+Build a multilib toolchain (READ HELP!!!) (MULTILIB) [N/y/?] n
+  Attempt to combine libraries into a single directory (DEMULTILIB) [Y/n/?] y
+  Disable multilib lib os dir names (READ HELP!!!) (DISABLE_MULTILIB_LIB_OSDIRNAMES) [Y/n/?] y
+Use the MMU (ARCH_USE_MMU) [Y/n/?] y
+Endianness:
+  1. Big endian (ARCH_BE)
+> 2. Little endian (ARCH_LE)
+  3. Both, default big endian (ARCH_BE_LE)
+  4. Both, default little endian (ARCH_LE_BE)
+choice[1-4]: 2
+Bitness:
+  1. 32-bit (ARCH_32)
+> 2. 64-bit (ARCH_64)
+choice[1-2]: 2
+*
+* Target optimisations
+*
+Architecture level (ARCH_ARCH) [] (NEW) 
+
+Emit assembly for CPU (ARCH_CPU) [] 
+Tune for CPU (ARCH_TUNE) [] (NEW) 
+
+Target CFLAGS (TARGET_CFLAGS) [] 
+Target LDFLAGS (TARGET_LDFLAGS) [] 
+*
+* Toolchain options
+*
+*
+* General toolchain options
+*
+Use sysroot'ed toolchain (USE_SYSROOT) [Y/n/?] y
+  sysroot directory name (SYSROOT_NAME) [sysroot] sysroot
+  sysroot prefix dir (READ HELP) (SYSROOT_DIR_PREFIX) [] 
+Build Static Toolchain (STATIC_TOOLCHAIN) [N/y/?] n
+Add crosstool-NG version to --version output (SHOW_CT_VERSION) [Y/n/?] y
+Toolchain ID string (TOOLCHAIN_PKGVERSION) [] 
+Toolchain bug URL (TOOLCHAIN_BUGURL) [] 
+*
+* Tuple completion and aliasing
+*
+Tuple's vendor string (TARGET_VENDOR) [rpi3-arm64] rpi3-arm64
+Tuple's sed transform (TARGET_ALIAS_SED_EXPR) [] 
+Tuple's alias (TARGET_ALIAS) [] 
+*
+* Toolchain type
+*
+Type
+  1. Native       (NO CODE!) (EXPERIMENTAL) (NATIVE) (NEW)
+> 2. Cross (CROSS)
+  3. Cross-native (NO CODE!) (EXPERIMENTAL) (CROSS_NATIVE) (NEW)
+  4. Canadian (CANADIAN)
+choice[1-4]: 
+*
+* Build system
+*
+  Tuple        (READ HELP!) (BUILD) [] 
+  Tools prefix (READ HELP!) (BUILD_PREFIX) [] 
+  Tools suffix (READ HELP!) (BUILD_SUFFIX) [] 
+*
+* Misc options
+*
+Enable nls (TOOLCHAIN_ENABLE_NLS) [N/y/?] n
+*
+* Operating System
+*
+Target OS
+  1. bare-metal (KERNEL_BARE_METAL)
+> 2. linux (KERNEL_LINUX)
+choice[1-2]: 2
+Source of linux
+> 1. Released tarball (LINUX_SRC_RELEASE)
+  2. Vendor/custom repository (LINUX_SRC_DEVEL) (NEW)
+  3. Custom location (LINUX_SRC_CUSTOM) (NEW)
+choice[1-3]: 
+Version of linux
+  1. 4.16.1 (LINUX_V_4_16)
+  2. 4.15.16 (LINUX_V_4_15)
+  3. 4.15 (LINUX_V_4_15)
+  4. 4.14.33 (LINUX_V_4_14)
+  5. 4.13.16 (LINUX_V_4_13)
+  6. 4.12.14 (LINUX_V_4_12)
+  7. 4.11.12 (LINUX_V_4_11)
+  8. 4.10.17 (LINUX_V_4_10)
+  9. 4.10.8 (OBSOLETE) (LINUX_V_4_10)
+  10. 4.9.93 (LINUX_V_4_9)
+  11. 4.8.17 (OBSOLETE) (LINUX_V_4_8) (NEW)
+  12. 4.7.10 (OBSOLETE) (LINUX_V_4_7) (NEW)
+  13. 4.6.7 (OBSOLETE) (LINUX_V_4_6) (NEW)
+  14. 4.5.7 (OBSOLETE) (LINUX_V_4_5) (NEW)
+  15. 4.4.127 (LINUX_V_4_4)
+  16. 4.3.6 (OBSOLETE) (LINUX_V_4_3) (NEW)
+  17. 4.2.8 (OBSOLETE) (LINUX_V_4_2) (NEW)
+  18. 4.1.49 (LINUX_V_4_1)
+  19. 4.0.9 (OBSOLETE) (LINUX_V_4_0) (NEW)
+  20. 3.19.8 (OBSOLETE) (LINUX_V_3_19) (NEW)
+  21. 3.18.104 (OBSOLETE) (LINUX_V_3_18) (NEW)
+  22. 3.17.8 (OBSOLETE) (LINUX_V_3_17) (NEW)
+  23. 3.16.56 (LINUX_V_3_16)
+  24. 3.15.10 (OBSOLETE) (LINUX_V_3_15) (NEW)
+  25. 3.14.79 (OBSOLETE) (LINUX_V_3_14) (NEW)
+  26. 3.13.11 (LINUX_V_3_13)
+  27. 3.12.74 (LINUX_V_3_12)
+  28. 3.11.10 (OBSOLETE) (LINUX_V_3_11) (NEW)
+> 29. 3.10.108 (LINUX_V_3_10)
+  30. 3.9.11 (OBSOLETE) (LINUX_V_3_9) (NEW)
+  31. 3.8.13 (OBSOLETE) (LINUX_V_3_8) (NEW)
+  32. 3.7.10 (OBSOLETE) (LINUX_V_3_7) (NEW)
+  33. 3.6.11 (OBSOLETE) (LINUX_V_3_6) (NEW)
+  34. 3.5.7 (OBSOLETE) (LINUX_V_3_5) (NEW)
+  35. 3.4.113 (LINUX_V_3_4)
+  36. 3.3.8 (OBSOLETE) (LINUX_V_3_3) (NEW)
+  37. 3.2.101 (LINUX_V_3_2)
+choice[1-37?]: 
+Kernel verbosity:
+> 1. Simplified (KERNEL_LINUX_VERBOSITY_0)
+  2. Full commands (KERNEL_LINUX_VERBOSITY_1)
+  3. Exec reasons (KERNEL_LINUX_VERBOSITY_2)
+choice[1-3]: 1
+Check installed headers (KERNEL_LINUX_INSTALL_CHECK) [Y/n/?] y
+*
+* Common kernel options
+*
+Build shared libraries (SHARED_LIBS) [Y/n/?] y
+*
+* Binary utilities
+*
+Binary format:
+> 1. ELF (ARCH_BINFMT_ELF)
+choice[1]: 1
+Binutils
+> 1. binutils (BINUTILS_BINUTILS)
+choice[1]: 1
+Show binutils versions from
+> 1. GNU (BINUTILS_USE_GNU)
+  2. Linaro (BINUTILS_USE_LINARO) (NEW)
+choice[1-2]: 
+Source of binutils
+> 1. Released tarball (BINUTILS_SRC_RELEASE)
+  2. Vendor/custom repository (BINUTILS_SRC_DEVEL) (NEW)
+  3. Custom location (BINUTILS_SRC_CUSTOM) (NEW)
+choice[1-3]: 
+Version of binutils
+  1. 2.29.1 (BINUTILS_V_2_29_1)
+> 2. 2.28.1 (BINUTILS_V_2_28_1)
+  3. 2.27 (BINUTILS_V_2_27)
+  4. 2.26.1 (BINUTILS_V_2_26_1)
+  5. 2.25.1 (OBSOLETE) (BINUTILS_V_2_25_1) (NEW)
+  6. 2.24 (OBSOLETE) (BINUTILS_V_2_24) (NEW)
+  7. 2.23.2 (OBSOLETE) (BINUTILS_V_2_23_2) (NEW)
+choice[1-7?]: 
+*
+* GNU binutils
+*
+Linkers to enable
+  1. ld (BINUTILS_LINKER_LD)
+> 2. ld, gold (BINUTILS_LINKER_LD_GOLD)
+  3. gold, ld (BINUTILS_LINKER_GOLD_LD)
+choice[1-3]: 2
+  Enable threaded gold (BINUTILS_GOLD_THREADS) [Y/n/?] y
+  Add ld wrapper (BINUTILS_LD_WRAPPER) [Y/n/?] y
+Enable support for plugins (BINUTILS_PLUGINS) [Y/n/?] y
+binutils extra config (BINUTILS_EXTRA_CONFIG_ARRAY) [] 
+binutils libraries for the target (BINUTILS_FOR_TARGET) [N/y/?] n
+*
+* C-library
+*
+C library
+  1. bionic (LIBC_BIONIC) (NEW)
+> 2. glibc (LIBC_GLIBC)
+  3. musl (LIBC_MUSL) (NEW)
+  4. uClibc (LIBC_UCLIBC)
+choice[1-4]: 
+Show glibc versions from
+> 1. GNU (GLIBC_USE_GNU)
+  2. Linaro (GLIBC_USE_LINARO) (NEW)
+choice[1-2]: 
+Source of glibc
+> 1. Released tarball (GLIBC_SRC_RELEASE)
+  2. Vendor/custom repository (GLIBC_SRC_DEVEL) (NEW)
+  3. Custom location (GLIBC_SRC_CUSTOM) (NEW)
+choice[1-3]: 
+Version of glibc
+  1. 2.27 (GLIBC_V_2_27)
+  2. 2.26 (GLIBC_V_2_26)
+  3. 2.25 (GLIBC_V_2_25)
+> 4. 2.24 (GLIBC_V_2_24)
+  5. 2.23 (GLIBC_V_2_23)
+  6. 2.22 (OBSOLETE) (GLIBC_V_2_22) (NEW)
+  7. 2.21 (OBSOLETE) (GLIBC_V_2_21) (NEW)
+  8. 2.20 (OBSOLETE) (GLIBC_V_2_20) (NEW)
+  9. 2.19 (GLIBC_V_2_19)
+  10. 2.18 (OBSOLETE) (GLIBC_V_2_18) (NEW)
+  11. 2.17 (GLIBC_V_2_17)
+  12. 2.16.0 (OBSOLETE) (GLIBC_V_2_16_0) (NEW)
+  13. 2.15 (OBSOLETE) (GLIBC_V_2_15) (NEW)
+  14. 2.14.1 (OBSOLETE) (GLIBC_V_2_14_1) (NEW)
+  15. 2.13 (OBSOLETE) (GLIBC_V_2_13) (NEW)
+  16. 2.12.2 (OBSOLETE) (GLIBC_V_2_12_2) (NEW)
+  17. 2.12.1 (GLIBC_V_2_12_1)
+choice[1-17?]: 
+Build libidn add-on (GLIBC_USE_LIBIDN_ADDON) [N/y/?] n
+extra config (GLIBC_EXTRA_CONFIG_ARRAY) [] 
+Extra config params (READ HELP) (GLIBC_CONFIGPARMS) [] 
+extra target CFLAGS (GLIBC_EXTRA_CFLAGS) [] 
+Enable obsolete (Sun) RPC (GLIBC_ENABLE_OBSOLETE_RPC) [Y/n/?] y
+Enable fortified build (EXPERIMENTAL) (GLIBC_ENABLE_FORTIFIED_BUILD) [N/y/?] (NEW) 
+
+Disable symbols versioning (GLIBC_DISABLE_VERSIONING) [N/y/?] n
+Oldest supported ABI (GLIBC_OLDEST_ABI) [] 
+Force unwind support (READ HELP!) (GLIBC_FORCE_UNWIND) [Y/n/?] y
+Build and install locales (GLIBC_LOCALES) [N/y/?] n
+Minimum supported kernel version
+  1. Let ./configure decide (GLIBC_KERNEL_VERSION_NONE)
+> 2. Same as kernel headers (default) (GLIBC_KERNEL_VERSION_AS_HEADERS)
+  3. Specific kernel version (GLIBC_KERNEL_VERSION_CHOSEN)
+choice[1-3]: 2
+Enable -Werror during the build (GLIBC_ENABLE_WERROR) [N/y/?] n
+*
+* Common C library options
+*
+Threading implementation to use:
+> 1. native (THREADS_NATIVE)
+choice[1]: 1
+Create /etc/ld.so.conf file (CREATE_LDSO_CONF) [N/y/?] n
+Install a cross ldd-like helper (LIBC_XLDD) [Y/n/?] y
+*
+* C compiler
+*
+Compiler
+> 1. gcc (CC_GCC)
+choice[1]: 1
+Show gcc versions from
+> 1. GNU (GCC_USE_GNU)
+  2. Linaro (GCC_USE_LINARO) (NEW)
+choice[1-2]: 
+Source of gcc
+> 1. Released tarball (GCC_SRC_RELEASE)
+  2. Vendor/custom repository (GCC_SRC_DEVEL) (NEW)
+  3. Custom location (GCC_SRC_CUSTOM) (NEW)
+choice[1-3]: 
+Version of gcc
+> 1. 8.1.0 (GCC_V_8_1_0)
+  2. 7.3.0 (GCC_V_7_3_0)
+  3. 6.4.0 (GCC_V_6_4_0)
+  4. 5.5.0 (GCC_V_5_5_0)
+  5. 4.9.4 (GCC_V_4_9_4)
+  6. 4.8.5 (OBSOLETE) (GCC_V_4_8_5) (NEW)
+choice[1-6?]: 
+Flags to pass to --enable-cxx-flags (CC_GCC_ENABLE_CXX_FLAGS) [] 
+Core gcc extra config (CC_GCC_CORE_EXTRA_CONFIG_ARRAY) [] 
+gcc extra config (CC_GCC_EXTRA_CONFIG_ARRAY) [--enable-default-pie] --enable-default-pie
+Link libstdc++ statically into the gcc binary (CC_GCC_STATIC_LIBSTDCXX) [Y/n/?] y
+Use system zlib (CC_GCC_SYSTEM_ZLIB) [N/y/?] n
+Configure TLS (Thread Local Storage) (CC_GCC_CONFIG_TLS) [M/n/y/?] m
+*
+* Optimisation features
+*
+Enable GRAPHITE loop optimisations (CC_GCC_USE_GRAPHITE) [Y/n/?] y
+Enable LTO (CC_GCC_USE_LTO) [Y/n/?] y
+*
+* Settings for libraries running on target
+*
+Optimize gcc libs for size (CC_GCC_ENABLE_TARGET_OPTSPACE) [Y/n/?] y
+Compile libmudflap (CC_GCC_LIBMUDFLAP) [N/y/?] n
+Compile libgomp (CC_GCC_LIBGOMP) [Y/n/?] y
+Compile libssp (CC_GCC_LIBSSP) [N/y/?] n
+Compile libquadmath (CC_GCC_LIBQUADMATH) [Y/n/?] y
+Compile libsanitizer (CC_GCC_LIBSANITIZER) [Y/n/?] y
+*
+* Misc. obscure options.
+*
+Use __cxa_atexit (CC_CXA_ATEXIT) [Y/n/?] y
+Do not build PCH (CC_GCC_DISABLE_PCH) [N/y/?] n
+Use sjlj for exceptions (CC_GCC_SJLJ_EXCEPTIONS) [M/n/y/?] m
+Enable 128-bit long doubles (CC_GCC_LDBL_128) [M/n/y/?] m
+Enable build-id (CC_GCC_BUILD_ID) [N/y/?] n
+linker hash style
+> 1. Default (CC_GCC_LNK_HASH_STYLE_DEFAULT)
+  2. sysv (CC_GCC_LNK_HASH_STYLE_SYSV)
+  3. gnu (CC_GCC_LNK_HASH_STYLE_GNU)
+  4. both (CC_GCC_LNK_HASH_STYLE_BOTH)
+choice[1-4]: 1
+Decimal floats
+> 1. auto (CC_GCC_DEC_FLOAT_AUTO)
+  2. bid (CC_GCC_DEC_FLOAT_BID)
+  3. dpd (CC_GCC_DEC_FLOAT_DPD)
+  4. no (CC_GCC_DEC_FLOATS_NO)
+choice[1-4?]: 1
+*
+* Additional supported languages:
+*
+C++ (CC_LANG_CXX) [Y/n/?] y
+Fortran (CC_LANG_FORTRAN) [Y/n/?] y
+ADA (EXPERIMENTAL) (CC_LANG_ADA) [N/y/?] (NEW) 
+
+Objective-C (EXPERIMENTAL) (CC_LANG_OBJC) [Y/n/?] y
+Objective-C++ (EXPERIMENTAL) (CC_LANG_OBJCXX) [Y/n/?] y
+Go (EXPERIMENTAL) (CC_LANG_GOLANG) [N/y/?] (NEW) 
+
+Other languages (EXPERIMENTAL) (CC_LANG_OTHERS) [] (NEW) 
+
+*
+* duma
+*
+duma (DEBUG_DUMA) [Y/n/?] y
+  Source of duma
+  > 1. Released tarball (DUMA_SRC_RELEASE) (NEW)
+    2. Vendor/custom repository (DUMA_SRC_DEVEL) (NEW)
+    3. Custom location (DUMA_SRC_CUSTOM) (NEW)
+  choice[1-3]: 
+  Version of duma
+  > 1. 2_5_15 (DUMA_V_2_5_15)
+  choice[1]: 1
+  Build a shared library (DUMA_SO) [Y/n] y
+    Install custom D.U.M.A wrapper (DUMA_CUSTOM_WRAPPER) [Y/n] y
+*
+* gdb
+*
+gdb (DEBUG_GDB) [Y/n/?] y
+  Show gdb versions from
+  > 1. GNU (GDB_USE_GNU)
+    2. Linaro (GDB_USE_LINARO) (NEW)
+  choice[1-2]: 
+  Source of gdb
+  > 1. Released tarball (GDB_SRC_RELEASE)
+    2. Vendor/custom repository (GDB_SRC_DEVEL) (NEW)
+    3. Custom location (GDB_SRC_CUSTOM) (NEW)
+  choice[1-3]: 
+  Version of gdb
+  > 1. 8.1 (GDB_V_8_1)
+    2. 8.0.1 (GDB_V_8_0_1)
+    3. 7.12.1 (GDB_V_7_12_1)
+    4. 7.11.1 (GDB_V_7_11_1)
+    5. 7.10.1 (OBSOLETE) (GDB_V_7_10_1) (NEW)
+    6. 7.9.1 (OBSOLETE) (GDB_V_7_9_1) (NEW)
+    7. 7.8.1 (OBSOLETE) (GDB_V_7_8_1) (NEW)
+    8. 7.7.1 (OBSOLETE) (GDB_V_7_7_1) (NEW)
+    9. 7.6.1 (OBSOLETE) (GDB_V_7_6_1) (NEW)
+    10. 7.5.1 (OBSOLETE) (GDB_V_7_5_1) (NEW)
+    11. 7.4.1 (OBSOLETE) (GDB_V_7_4_1) (NEW)
+    12. 7.3.1 (OBSOLETE) (GDB_V_7_3_1) (NEW)
+    13. 7.2a (OBSOLETE) (GDB_V_7_2A) (NEW)
+    14. 7.1a (OBSOLETE) (GDB_V_7_1A) (NEW)
+    15. 7.0a (OBSOLETE) (GDB_V_7_0A) (NEW)
+    16. 7.0.1a (OBSOLETE) (GDB_V_7_0_1A) (NEW)
+    17. 6.8a (OBSOLETE) (GDB_V_6_8A) (NEW)
+  choice[1-17?]: 
+  Cross-gdb (GDB_CROSS) [Y/n/?] y
+    Build a static cross gdb (GDB_CROSS_STATIC) [N/y/?] n
+    Enable 'sim' (GDB_CROSS_SIM) [N/y/?] n
+    Enable python scripting (GDB_CROSS_PYTHON) [N/y/?] n
+    Cross-gdb extra config (GDB_CROSS_EXTRA_CONFIG_ARRAY) [] 
+  Native gdb (GDB_NATIVE) [Y/n/?] y
+    Build a static native gdb (GDB_NATIVE_STATIC) [N/y/?] n
+  gdbserver (GDB_GDBSERVER) [Y/n/?] y
+    Build a static gdbserver (GDB_GDBSERVER_STATIC) [N/y/?] n
+    Link against static libstdc+++ (GDB_GDBSERVER_STATIC_LIBSTDCXX) [N/y/?] n
+    Build the IPA library (GDB_GDBSERVER_BUILD_IPA_LIB) [N/y/?] n
+*
+* expat
+*
+expat (COMP_LIBS_EXPAT) [Y/?] y
+  Source of expat
+  > 1. Released tarball (EXPAT_SRC_RELEASE)
+    2. Vendor/custom repository (EXPAT_SRC_DEVEL) (NEW)
+    3. Custom location (EXPAT_SRC_CUSTOM) (NEW)
+  choice[1-3]: 
+  Version of expat
+  > 1. 2.2.5 (EXPAT_V_2_2_5)
+    2. 2.1.1 (OBSOLETE) (EXPAT_V_2_1_1) (NEW)
+  choice[1-2?]: 
+*
+* gettext
+*
+gettext (COMP_LIBS_GETTEXT) [Y/?] y
+  Source of gettext
+  > 1. Released tarball (GETTEXT_SRC_RELEASE)
+    2. Vendor/custom repository (GETTEXT_SRC_DEVEL) (NEW)
+    3. Custom location (GETTEXT_SRC_CUSTOM) (NEW)
+  choice[1-3]: 
+  Version of gettext
+    1. 0.19.8.1 (GETTEXT_V_0_19_8_1)
+  > 2. 0.19.7 (OBSOLETE) (GETTEXT_V_0_19_7)
+  choice[1-2?]: 2
+*
+* gmp
+*
+gmp (COMP_LIBS_GMP) [Y/?] y
+  Source of gmp
+  > 1. Released tarball (GMP_SRC_RELEASE)
+    2. Vendor/custom repository (GMP_SRC_DEVEL) (NEW)
+    3. Custom location (GMP_SRC_CUSTOM) (NEW)
+  choice[1-3]: 
+  Version of gmp
+  > 1. 6.1.2 (GMP_V_6_1_2)
+    2. 6.0.0a (OBSOLETE) (GMP_V_6_0_0A) (NEW)
+    3. 5.1.3 (OBSOLETE) (GMP_V_5_1_3) (NEW)
+    4. 5.0.5 (OBSOLETE) (GMP_V_5_0_5) (NEW)
+  choice[1-4?]: 
+*
+* isl
+*
+isl (COMP_LIBS_ISL) [Y/?] y
+  Source of isl
+  > 1. Released tarball (ISL_SRC_RELEASE)
+    2. Vendor/custom repository (ISL_SRC_DEVEL) (NEW)
+    3. Custom location (ISL_SRC_CUSTOM) (NEW)
+  choice[1-3]: 
+  Version of isl
+    1. 0.19 (ISL_V_0_19)
+  > 2. 0.18 (ISL_V_0_18)
+    3. 0.17.1 (ISL_V_0_17_1)
+    4. 0.16.1 (ISL_V_0_16_1)
+    5. 0.15 (ISL_V_0_15)
+  choice[1-5?]: 2
+*
+* libiconv
+*
+libiconv (COMP_LIBS_LIBICONV) [Y/?] y
+  Source of libiconv
+  > 1. Released tarball (LIBICONV_SRC_RELEASE)
+    2. Vendor/custom repository (LIBICONV_SRC_DEVEL) (NEW)
+    3. Custom location (LIBICONV_SRC_CUSTOM) (NEW)
+  choice[1-3]: 
+  Version of libiconv
+    1. 1.15 (LIBICONV_V_1_15)
+  > 2. 1.14 (OBSOLETE) (LIBICONV_V_1_14)
+  choice[1-2?]: 2
+*
+* mpc
+*
+mpc (COMP_LIBS_MPC) [Y/?] y
+  Source of mpc
+  > 1. Released tarball (MPC_SRC_RELEASE)
+    2. Vendor/custom repository (MPC_SRC_DEVEL) (NEW)
+    3. Custom location (MPC_SRC_CUSTOM) (NEW)
+  choice[1-3]: 
+  Version of mpc
+  > 1. 1.1.0 (MPC_V_1_1_0)
+    2. 1.0.3 (MPC_V_1_0_3)
+    3. 0.9 (OBSOLETE) (MPC_V_0_9) (NEW)
+    4. 0.8.2 (OBSOLETE) (MPC_V_0_8_2) (NEW)
+    5. 0.7 (OBSOLETE) (MPC_V_0_7) (NEW)
+  choice[1-5?]: 
+*
+* mpfr
+*
+mpfr (COMP_LIBS_MPFR) [Y/?] y
+  Source of mpfr
+  > 1. Released tarball (MPFR_SRC_RELEASE)
+    2. Vendor/custom repository (MPFR_SRC_DEVEL) (NEW)
+    3. Custom location (MPFR_SRC_CUSTOM) (NEW)
+  choice[1-3]: 
+  Version of mpfr
+  > 1. 4.0.1 (MPFR_V_4_0_1)
+    2. 3.1.6 (MPFR_V_3_1_6)
+    3. 3.0.1 (OBSOLETE) (MPFR_V_3_0_1) (NEW)
+  choice[1-3?]: 
+*
+* ncurses
+*
+ncurses (COMP_LIBS_NCURSES) [Y/?] y
+  Source of ncurses
+  > 1. Released tarball (NCURSES_SRC_RELEASE)
+    2. Vendor/custom repository (NCURSES_SRC_DEVEL) (NEW)
+    3. Custom location (NCURSES_SRC_CUSTOM) (NEW)
+  choice[1-3]: 
+  Version of ncurses
+    1. 6.1 (NCURSES_V_6_1)
+  > 2. 6.0 (NCURSES_V_6_0)
+  choice[1-2?]: 2
+  ncurses 6.0 ABI support (NCURSES_NEW_ABI) [N/y/?] (NEW) 
+
+  Extra configure arguments for host ncurses (NCURSES_HOST_CONFIG_ARGS) [] 
+  Disable terminfo DB on the host (NCURSES_HOST_DISABLE_DB) [Y/n/?] y
+  List of fallback terminals for the host (NCURSES_HOST_FALLBACKS) [linux,xterm,xterm-color,xterm-256color,vt100] linux,xterm,xterm-color,xterm-256color,vt100
+  Extra configure arguments for target ncurses (NCURSES_TARGET_CONFIG_ARGS) [] 
+  Disable terminfo DB on the target (NCURSES_TARGET_DISABLE_DB) [N/y/?] n
+  List of fallback terminals for the target (NCURSES_TARGET_FALLBACKS) [] 
+*
+* autoconf
+*
+autoconf (COMP_TOOLS_AUTOCONF) [Y/n/?] y
+  Source of autoconf
+  > 1. Released tarball (AUTOCONF_SRC_RELEASE)
+    2. Vendor/custom repository (AUTOCONF_SRC_DEVEL) (NEW)
+    3. Custom location (AUTOCONF_SRC_CUSTOM) (NEW)
+  choice[1-3]: 
+  Version of autoconf
+  > 1. 2.69 (AUTOCONF_V_2_69)
+    2. 2.65 (AUTOCONF_V_2_65)
+  choice[1-2?]: 1
+*
+* automake
+*
+automake (COMP_TOOLS_AUTOMAKE) [Y/n/?] y
+  Source of automake
+  > 1. Released tarball (AUTOMAKE_SRC_RELEASE)
+    2. Vendor/custom repository (AUTOMAKE_SRC_DEVEL) (NEW)
+    3. Custom location (AUTOMAKE_SRC_CUSTOM) (NEW)
+  choice[1-3]: 
+  Version of automake
+  > 1. 1.16.1 (AUTOMAKE_V_1_16_1)
+    2. 1.15.1 (AUTOMAKE_V_1_15_1)
+    3. 1.14.1 (OBSOLETE) (AUTOMAKE_V_1_14_1) (NEW)
+    4. 1.11.6 (OBSOLETE) (AUTOMAKE_V_1_11_6) (NEW)
+  choice[1-4?]: 
+*
+* Test suite
+*
+GCC test suite (TEST_SUITE_GCC) [N/y/?] (NEW) 
+
+#
+# configuration written to .config
+#
+_FAMILY linux
+_FVAL 3.10
+_FAMILY glibc
+_FVAL 2.24
+_FAMILY gcc
+_FVAL 7.2.0
+_FAMILY binutils
+_FVAL 2.28.1
+_FAMILY 1.14
+_FVAL 1.14
+_FAMILY=1.14, _FVAL=1.14
+_FAMILY 0.19.7
+_FVAL 0.19.7
+_FAMILY=0.19.7, _FVAL=0.19.7
+_FAMILY 6.1.2
+_FVAL 6.1.2
+_FAMILY=6.1.2, _FVAL=6.1.2
+_FAMILY 3.1.5
+_FVAL 3.1.5
+_FAMILY=3.1.5, _FVAL=3.1.5
+_FAMILY 0.18
+_FVAL 0.18
+_FAMILY=0.18, _FVAL=0.18
+_FAMILY 1.0.3a
+_FVAL 1.0.3a
+_FAMILY=1.0.3a, _FVAL=1.0.3a
+_FAMILY 6.0
+_FVAL 6.0
+_FAMILY=6.0, _FVAL=6.0
+_FAMILY duma
+_FVAL 2_5_15
+CT_GDB_NATIVE=y
+CT_EXPAT_TARGET=y
+.config: line 836: CT_TARGET_VENDOR_rpi3-arm64=y: command not found
+[ERROR]  
+[ERROR]  >>
+[ERROR]  >>  Build failed in step '(top-level)'
+[ERROR]  >>
+[ERROR]  >>  Error happened in: source[.config@836]
+[ERROR]  >>        called from: CT_LoadConfig[scripts/functions@16]
+[ERROR]  >>        called from: main[scripts/crosstool-NG.sh@22]
+[ERROR]  >>
+[ERROR]  >>  For more info on this error, look at the file: ''
+[ERROR]  >>  There is a list of known issues, some with workarounds, in:
+[ERROR]  >>      https://crosstool-ng.github.io/docs/known-issues/
+[ERROR]  >>
+[ERROR]  >> NOTE: Your configuration includes features marked EXPERIMENTAL.
+[ERROR]  >> Before submitting a bug report, try to reproduce it without enabling
+[ERROR]  >> any experimental features. Otherwise, you'll need to debug it
+[ERROR]  >> and present an explanation why it is a bug in crosstool-NG - or
+[ERROR]  >> preferably, a fix.
+[ERROR]  >>
+[ERROR]  >>  If you feel this is a bug in crosstool-NG, report it at:
+[ERROR]  >>      https://github.com/crosstool-ng/crosstool-ng/issues/
+[ERROR]  >>
+[ERROR]  >>  Make sure your report includes all the information pertinent to this issue.
+[ERROR]  >>  Read the bug reporting guidelines here:
+[ERROR]  >>      http://crosstool-ng.github.io/support/
+[ERROR]  
+[ERROR]  (elapsed: 25558367:52.16)
+/home/pi/pidrive/conda-builds/compilers_linux-aarch64_1533502005557/_build_env/bin/ct-ng:232: recipe for target 'build' failed
+make: *** [build] Error 127
+Copying /home/pi/berryconda-updates/berryconda/recipes/ctng-compilers to /home/pi/pidrive/conda-builds/compilers_linux-aarch64_1533502005557/work
+source tree in: /home/pi/pidrive/conda-builds/compilers_linux-aarch64_1533502005557/work
+Traceback (most recent call last):
+  File "/home/pi/berryconda3/bin/conda-build", line 11, in <module>
+    sys.exit(main())
+  File "/home/pi/berryconda3/lib/python3.6/site-packages/conda_build/cli/main_build.py", line 420, in main
+    execute(sys.argv[1:])
+  File "/home/pi/berryconda3/lib/python3.6/site-packages/conda_build/cli/main_build.py", line 411, in execute
+    verify=args.verify)
+  File "/home/pi/berryconda3/lib/python3.6/site-packages/conda_build/api.py", line 200, in build
+    notest=notest, need_source_download=need_source_download, variants=variants)
+  File "/home/pi/berryconda3/lib/python3.6/site-packages/conda_build/build.py", line 2177, in build_tree
+    notest=notest,
+  File "/home/pi/berryconda3/lib/python3.6/site-packages/conda_build/build.py", line 1417, in build
+    utils.check_call_env(cmd, env=env, cwd=src_dir, stats=build_stats)
+  File "/home/pi/berryconda3/lib/python3.6/site-packages/conda_build/utils.py", line 310, in check_call_env
+    return _func_defaulting_env_to_os_environ('call', *popenargs, **kwargs)
+  File "/home/pi/berryconda3/lib/python3.6/site-packages/conda_build/utils.py", line 290, in _func_defaulting_env_to_os_environ
+    raise subprocess.CalledProcessError(proc.returncode, _args)
+subprocess.CalledProcessError: Command '['/bin/bash', '-e', '/home/pi/pidrive/conda-builds/compilers_linux-aarch64_1533502005557/work/conda_build.sh']' returned non-zero exit status 2.

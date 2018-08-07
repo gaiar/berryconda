@@ -15,9 +15,10 @@ requirements:
     - {{ compiler('c') }}
     - pkg-config
     - make
-  host:
     - openssl
-    - zlib
+  host:
+#    - openssl
+#    - zlib
 
 test:
   commands:
