@@ -1,0 +1,75 @@
+{% set version = "2.18.0" %}
+
+package:
+  name: git
+  version: {{ version }}
+
+source:
+  url: https://github.com/git/git/archive/v{{ version }}.tar.gz  # [not win]
+  sha256: 93993babac690a06906d832a1715c3315b4787a2845aeb500f7dcc82e1599df2  # [not win]
+
+build:
+  number: 1
+  # git hardcodes paths to external utilities (e.g. curl)
+  detect_binary_files_with_prefix: true
+  # we don't actually build on windows, don't need multiple VC builds
+  skip: true  # [win and vc!=14]
+
+requirements:
+  build:
+#    - {{ compiler('c') }}  # [unix]
+    - autoconf  # [unix]
+    - make      # [unix]
+    - 7za       # [win]
+  host:
+    - curl      # [unix]
+    - expat     # [unix]
+    - gettext   # [unix]
+    - libiconv  # [unix]
+    - openssl   # [unix]
+    - perl      # [unix]
+    - tk        # [unix]
+    - zlib      # [unix]
+  run:
+    - curl      # [unix]
+    - expat     # [unix]
+    - gettext   # [unix]
+    - libiconv  # [unix]
+    - openssl   # [unix]
+    - perl      # [unix]
+    - tk        # [unix]
+    - zlib      # [unix]
+
+test:
+  commands:
+    # Verify git location.
+    - test -f $PREFIX/bin/git                               # [unix]
+    - test -f $PREFIX/bin/gitk                              # [unix]
+    - if not exist %LIBRARY_PREFIX%\\bin\\git.exe exit 1    # [win]
+
+    # Verify interactive support.
+    - test -f $PREFIX/libexec/git-core/git-add--interactive  # [unix]
+
+    # Run git commands.
+    - git --version
+    - git clone https://github.com/conda-forge/git-feedstock
+
+    # test completions
+    - bash $PREFIX/share/bash-completion/completions/git  # [unix]
+    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
+
+about:
+  home: https://git-scm.com/
+  license: GPL v2 and LGPL 2.1
+  license_file: COPYING  # [not win]
+  summary: distributed version control system
+
+extra:
+  recipe-maintainers:
+    - jakirkham
+    - msarahan
+    - pelson
+    - scopatz
+    - ocefpaf
+    - dougalsutherland

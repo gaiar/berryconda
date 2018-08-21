@@ -1,4 +1,4 @@
-{% set version = "3.2.4" %}
+{% set version = "4.0.2" %}
 
 package:
   name: ffmpeg
@@ -7,37 +7,55 @@ package:
 source:
   fn: ffmpeg-{{ version }}.tar.gz  # [not win]
   url: https://ffmpeg.org/releases/ffmpeg-{{ version }}.tar.gz  # [not win]
-  sha256: 2838c37bd35dba6e9b08ebe4e6c11dedbe2d9909583e3c2b9e7a1ad3ce2a9607  # [not win]
+  sha256: a56ef203c14ffab56b97690a1005522cfa0dc2c42c3c40c33c0bec4875b706eb  # [not win]
+  # This patch is required to fix https://trac.macports.org/ticket/55746
+  # with Xcode < 7.0, where _Nullable attribues are not supported.
+  # Can probably be removed once the compiler infrastructure is updated.
+  patches:  # [osx]
+    - patch-libavcodec-videotoolboxenc.c-drop-Nullable.patch  # [osx]
 
-  fn: ffmpeg-{{ version }}-win32-shared.zip  # [win32]
-  url: https://ffmpeg.zeranoe.com/builds/win32/shared/ffmpeg-{{ version }}-win32-shared.zip  # [win32]
-  sha256: c62a6e2237097cedbfd6b2e122f6650baf468d1bb4e9f73105126bf2a44b2329  # [win32]
-
-  fn: ffmpeg-{{ version }}-win64-shared.zip  # [win64]
-  url: https://ffmpeg.zeranoe.com/builds/win64/shared/ffmpeg-{{ version }}-win64-shared.zip  # [win64]
-  sha256: 31dab0e45aa2808fc422927eca5d49761985d1471b7122aadc6f85deb7bf6a7f  # [win64]
+  fn: ffmpeg-{{ version }}-win64-shared.zip  # [win]
+  url: https://ffmpeg.zeranoe.com/builds/win64/shared/ffmpeg-{{ version }}-win64-shared.zip  # [win]
+  sha256: ede566aca8b5348dff85570f9638c6bad33209f9419f79db7bde7daa37599bff  # [win]
 
 build:
   number: 0
+  run_exports:
+  # seems to be minor version compatibility
+  # https://abi-laboratory.pro/tracker/timeline/ffmpeg/
+    - {{ pin_subpackage('ffmpeg', max_pin='x.x') }}
 
 requirements:
   build:
-    - pkg-config   # [not win]
-    - bzip2 1.0.*  # [not win]
-    - x264         # [not win]
-    - zlib 1.2.11   # [not win]
-    - 7za          # [win]
-    - curl >=7.44.0,<8         # [win]
-    - openssl      # [win]
+    - {{ compiler("c") }}
+    - pkg-config  # [not win]
+    - libtool  # [not win]
+    - nasm  # [not win]
+    - 7za  # [win]
+    - curl  # [win]
+    - openssl  # [win]
+  host:
+    - bzip2  # [not win]
+    - freetype  # [not win]
+    - gnutls 3.5.*  # [not win]
+    - libiconv  # [not win]
+    - x264  # [not win]
+    - zlib  # [not win]
+    - openh264 1.7.*  # [not win]
   run:
-    - bzip2 1.0.*  # [not win]
-    - x264         # [not win]
-    - zlib 1.2.11   # [not win]
+    - bzip2  # [not win]
+    - freetype  # [not win]
+    - gnutls 3.5.*  # [not win]
+    - openh264 1.7.*  # [not win]
 
 test:
   commands:
     - ffmpeg --help
-    - ffmpeg -codecs
+    - ffmpeg -loglevel panic -protocols | grep "https"  # [not win]
+    - ffmpeg -loglevel panic -codecs | grep "DEVI.S zlib"  # [unix]
+    - ffmpeg -loglevel panic -codecs | grep "DEV.LS h264"  # [unix]
+    - ffmpeg -loglevel panic -codecs | grep "libx264"  # [unix]
+    - ffmpeg -loglevel panic -codecs | grep "libopenh264"  # [unix]
     # Verify dynamic libraries on all systems
     {% set ffmpeg_libs = [
         "avcodec",
@@ -60,8 +78,8 @@ test:
 
 about:
   home: http://www.ffmpeg.org/
-  license: GPL 2
-  license_file: COPYING.GPLv2  # [unix]
+  license: GPL 3
+  license_file: COPYING.GPLv3  # [unix]
   summary: Cross-platform solution to record, convert and stream audio and video.
 
 extra:
@@ -72,3 +90,5 @@ extra:
     - caspervdw
     - patricksnape
     - ocefpaf
+    - sdvillal
+    - carlodri

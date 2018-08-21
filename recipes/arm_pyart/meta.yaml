@@ -1,6 +1,6 @@
 {% set name = "arm_pyart" %}
-{% set version = "1.8.0" %}
-{% set sha256 = "b68ac9cb70b357ded1173a84a44883c3348b335fbb674f6c2e5b654171a1c9d7" %}
+{% set version = "1.9.1" %}
+{% set sha256 = "871fb80938bd93430971aad34b41e01d41fd64a6a10ff6fd44ba719879ca7687" %}
 
 package:
   name: {{ name|lower }}
@@ -18,12 +18,15 @@ requirements:
     build:
         - python
         - numpy 1.11.*
+        - trmm_rsl  # [not win]
+
     run:
         - python
         - numpy >=1.11
         - scipy
         - matplotlib
         - netcdf4
+        - trmm_rsl  # [not win]
 
 test:
     imports:
@@ -33,3 +36,8 @@ about:
     home: http://arm-doe.github.io/pyart/
     license: BSD-3-Clause
     summary: "Python ARM Radar Toolkit"
+
+extra:
+    recipe-maintainers:
+        - jjhelmus
+        - zssherman

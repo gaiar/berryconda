@@ -10,13 +10,17 @@ tar xzf tcl${VER}-src.tar.gz
 tar xzf tk${VER}-src.tar.gz
 
 ARCH_FLAG=""
+if [ "${ARCH}" == "64" ]
+then
+    ARCH_FLAG="--enable-64bit"
+fi
 
 cd $SRC_DIR/tcl${VER}/unix
 ./configure \
 	--prefix="${PREFIX}" \
 	$ARCH_FLAG \
 
-make -j$CPU_COUNT
+make
 make install
 
 cd $SRC_DIR/tk${VER}/unix
@@ -26,7 +30,7 @@ cd $SRC_DIR/tk${VER}/unix
 	--with-tcl="${PREFIX}/lib" \
 	--enable-aqua=yes \
 
-make -j$CPU_COUNT
+make
 make install
 
 cd $PREFIX

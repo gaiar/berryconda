@@ -1,4 +1,4 @@
-{% set version = "3.3.0" %}
+{% set version = "3.4.1" %}
 {% set blas_variant = "openblas" %}
 
 package:
@@ -8,53 +8,71 @@ package:
 source:
   fn: opencv-{{ version }}.tar.gz
   url: https://github.com/opencv/opencv/archive/{{ version }}.tar.gz
-  sha256: 8bb312b9d9fd17336dc1f8b3ac82f021ca50e2034afc866098866176d985adc6
+  sha256: f1b87684d75496a1054405ae3ee0b6573acaf3dad39eaf4f1d66fdd7e03dc852
 
 build:
-  number: 0
+  number: 201
+  # Python2.7 support dropped: https://github.com/opencv/opencv/issues/8481
+  skip: true  # [win and py27]
+  features:                        # [not win]
+    - blas_{{ blas_variant }}      # [not win]
 
 requirements:
   build:
-    - python
-    - pkg-config
-    # For sha256 comparisons of opencv_contrib
     - openssl 1.0.*                # [unix]
-    # For downloading opencv_contrib
     - curl >=7.44.0,<8
+    - cmake
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - python
+    - pkgconfig                    # [unix]
+    # For sha256 comparisons of opencv_contrib
+    # For downloading opencv_contrib
     # For applying patches
     - git                          # [win]
-    #- cmake  # use cmake provided by the system
-    - numpy 1.11.*
-    - hdf5 1.8.17         # [unix]
+    - numpy
+    - hdf5                         # [unix]
+    - eigen 3.2.*
     - jasper                       # [unix]
-    - zlib 1.2.11
-    - jpeg 9*
-    - libtiff >=4.0.3,<4.0.8
-    - libwebp 0.5.*
-    - libpng >=1.6.22,<1.6.31
-    - openblas 0.2.19|0.2.19.*     # [not win]
-    - ffmpeg >=3.2.3,<3.2.6        # [not win]
+    - zlib
+    - jpeg
+    - libtiff
+    - libwebp
+    - harfbuzz                     # [unix]
+    - libpng
+    - openblas                     # [not win]
+    - blas 1.1 {{ blas_variant }}  # [not win]
+    - ffmpeg                       # [not win]
+    - qt                           # [not osx]
 
   run:
     - python
-    - numpy >=1.11
-    - hdf5 1.8.17         # [unix]
+    - {{ pin_compatible('numpy') }}
+    - hdf5                         # [unix]
     - jasper                       # [unix]
-    - zlib 1.2.11
-    - jpeg 9*
-    - libwebp 0.5.*
-    - libtiff >=4.0.3,<4.0.8
-    - libpng >=1.6.22,<1.6.31
-    - openblas 0.2.19|0.2.19.*     # [not win]
-    - ffmpeg >=3.2.3,<3.2.6        # [not win]
+    - zlib
+    - jpeg
+    - libwebp
+    - harfbuzz                     # [unix]
+    - libtiff
+    - libpng
+    - openblas                     # [not win]
+    - blas 1.1 {{ blas_variant }}  # [not win]
+    - ffmpeg                       # [not win]
+    - qt                           # [not osx]
 
 test:
+    requires:
+      - requests
+      - certifi
     imports:
       - cv2
       - cv2.xfeatures2d
 
     commands:
         # Verify dynamic libraries on all systems
+        {% set win_ver_lib = version|replace(".", "") %}
         {% set opencv_libs = [
             "aruco",
             "bgsegm",
@@ -99,10 +117,11 @@ test:
         ] %}
         {% for each_opencv_lib in opencv_libs %}
         - test -f $PREFIX/lib/libopencv_{{ each_opencv_lib }}${SHLIB_EXT}                  # [unix]
-        - if not exist %PREFIX%\\Library\\bin\\opencv_{{ each_opencv_lib }}330.dll exit 1  # [win]
+        - if not exist %PREFIX%\\Library\\bin\\opencv_{{ each_opencv_lib }}{{ win_ver_lib }}.dll exit 1  # [win]
         {% endfor %}
         - test -f $PREFIX/lib/libopencv_bioinspired${SHLIB_EXT}  # [unix]
         - test -f $PREFIX/lib/libopencv_hdf${SHLIB_EXT}          # [unix]
+        - test -f $PREFIX/lib/libopencv_freetype${SHLIB_EXT}     # [unix]
 
 about:
   home: http://opencv.org/

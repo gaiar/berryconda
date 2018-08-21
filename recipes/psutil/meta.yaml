@@ -1,13 +1,15 @@
-{% set version = "5.4.3" %}
+{% set name = "psutil" %}
+{% set version = "5.4.6" %}
+{% set sha256 = "686e5a35fe4c0acc25f3466c32e716f2d498aaae7b7edc03e2305b682226bcf6" %}
 
 package:
-  name: psutil
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: psutil-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/p/psutil/psutil-{{ version }}.tar.gz
-  md5: 3b291833dbea631db9d271aa602a169a
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/p/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
   number: 0
@@ -29,9 +31,31 @@ test:
 
   imports:
     - psutil
+    - psutil._psutil_posix    # [unix]
+    - psutil._psutil_linux    # [linux]
+    - psutil._psutil_osx      # [osx]
+    - psutil._psutil_windows  # [win]
     - psutil.tests
 
 about:
   home: https://github.com/giampaolo/psutil
   license: BSD 3-Clause
+  license_file: LICENSE
   summary: A cross-platform process and system utilities module for Python
+  description: |
+    psutil (process and system utilities) is a cross-platform library for
+    retrieving information on running processes and system utilization (CPU,
+    memory, disks, network) in Python. It is useful mainly for system
+    monitoring, profiling and limiting process resources and management of
+    running processes.
+  doc_url: http://pythonhosted.org/psutil/
+  doc_source_url: https://github.com/giampaolo/psutil/blob/master/docs/index.rst
+  dev_url: https://github.com/giampaolo/psutil
+
+extra:
+  recipe-maintainers:
+    - gqmelo
+    - jakirkham
+    - jjhelmus
+    - pelson
+    - nehaljwani

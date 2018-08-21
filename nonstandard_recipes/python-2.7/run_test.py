@@ -127,7 +127,7 @@ if not ppc64le:
     import turtle
     print('TK_VERSION:', _tkinter.TK_VERSION)
     print('TCL_VERSION:', _tkinter.TCL_VERSION)
-    TCLTK_VER = '8.6' if (sys.platform == 'win32' or armv6l or armv7l) else '8.5'
+    TCLTK_VER = '8.6' if (sys.platform == 'win32' or armv6l or armv7l) else '8.6'
     assert _tkinter.TK_VERSION == _tkinter.TCL_VERSION == TCLTK_VER
 
 print('OPENSSL_VERSION:', ssl.OPENSSL_VERSION)

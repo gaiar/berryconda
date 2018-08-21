@@ -1,18 +1,23 @@
-{% set version = "3.11" %}
+{% set name = "PyYAML" %}
+{% set version = "3.12" %}
+{% set sha256 = "592766c6303207a20efc445587778322d7f73b161bd994f227adaa341ba212ab" %}
+{% set build = 1 %}
+
 
 package:
-  name: pyyaml
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: PyYAML-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/P/PyYAML/PyYAML-{{ version }}.tar.gz
-  md5: f50e08ef0fe55178479d3a618efe21db
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: {{ build }}
   script:
-    - python setup.py --with-libyaml build_ext --include-dirs="${PREFIX}/include" --library-dirs="${PREFIX}/lib"
+    - python setup.py --with-libyaml build_ext --include-dirs="${PREFIX}/include" --library-dirs="${PREFIX}/lib"  # [unix]
+    - python setup.py --with-libyaml build_ext --include-dirs="%LIBRARY_INC%" --library-dirs="%LIBRARY_LIB%"      # [win]
     - python setup.py install
     - python setup.py test
 
@@ -32,5 +37,15 @@ test:
 
 about:
   home: http://pyyaml.org/wiki/PyYAML
+  license_file: LICENSE
   license: MIT
+  license_family: MIT
   summary: YAML parser and emitter for Python
+  dev_url: https://github.com/yaml/pyyaml
+  doc_url: http://pyyaml.org/wiki/PyYAML
+
+extra:
+  recipe-maintainers:
+    - jakirkham
+    - msarahan
+    - pelson

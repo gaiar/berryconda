@@ -10,26 +10,43 @@ source:
 
 build:
   number: 0
-  skip: True  # [win]
+  skip: true  # [win and vc<14]
+  run_exports:
+    # SONAME changes at minor revs.
+    #    https://abi-laboratory.pro/tracker/timeline/giflib/
+    - {{ pin_subpackage('giflib', max_pin='x.x') }}
+
+requirements:
+  build:
+    - {{ compiler('c') }}
 
 test:
   commands:
-    - gif2rgb -h
-    - gifbuild -h
-    - gifclrmp -h
-    - gifecho -h
-    - giffix -h
-    - gifinto -h
-    - giftext -h
+    - gif2rgb -h  # [not win]
+    - gifbuild -h  # [not win]
+    - gifclrmp -h  # [not win]
+    - gifecho -h  # [not win]
+    - giffix -h  # [not win]
+    - gifinto -h  # [not win]
+    - giftext -h  # [not win]
+    - gif2rgb.exe -h  # [win]
+    - gifbuild.exe -h  # [win]
+    - gifclrmp.exe -h  # [win]
+    - gifecho.exe -h  # [win]
+    - giffix.exe -h  # [win]
+    - gifinto.exe -h  # [win]
+    - giftext.exe -h  # [win]
     - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
     - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: http://giflib.sourceforge.net
   license: MIT
+  license_file: COPYING
   summary: Library for reading and writing gif images
 
 extra:
   recipe-maintainers:
     - ocefpaf
     - 183amir
+    - msarahan

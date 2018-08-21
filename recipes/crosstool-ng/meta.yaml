@@ -1,4 +1,4 @@
-{% set commit="linux-target-3" %}
+{% set commit="linux-target-2" %}
 
 package:
   name: crosstool-ng
@@ -16,12 +16,12 @@ build:
 requirements:
   build:
     # TODO :: We need some [not bootstrapping] selector or something?
-    - {{ compiler('c') }}
+#    - {{ compiler('c') }}
     - autoconf
     - automake
     - bison
     - flex
-    - git
+#    - git
   host:
     - ncurses
     - libtool

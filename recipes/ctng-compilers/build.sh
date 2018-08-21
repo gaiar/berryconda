@@ -34,7 +34,7 @@ if [[ ${ctng_libc} == uClibc ]]; then
   fi
 else
   if [[ ! -e "${SYS_PREFIX}/conda-bld/src_cache/glibc-${gnu}.tar.bz2" ]]; then
-    ${DOWNLOADER_INSECURE} https://ftp.gnu.org/gnu/libc/glibc-${gnu}.tar.bz2 ${DOWNLOADER_OUT} ${SYS_PREFIX}/conda-bld/src_cache/glibc-${gnu}.tar.bz2
+    ${DOWNLOADER_INSECURE} http://ftpmirror.gnu.org/gnu/libc/glibc-${gnu}.tar.bz2 ${DOWNLOADER_OUT} ${SYS_PREFIX}/conda-bld/src_cache/glibc-${gnu}.tar.bz2
   fi
 fi
 

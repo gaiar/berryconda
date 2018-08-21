@@ -1,0 +1,35 @@
+{% set version = "2.4.6" %}
+
+package:
+    name: libtool
+    version: {{ version }}
+
+source:
+    fn: libtool-{{ version }}.tar.gz
+    url: http://ftpmirror.gnu.org/libtool/libtool-{{ version }}.tar.gz
+    sha256: e3bd4d5d3d025a36c21dd6af7ea818a2afcd4dfc1ea5a17b39d7854bcd0c06e3
+
+build:
+    number: 1
+    skip: True  # [win]
+
+requirements:
+    build:
+        - automake
+        - autoconf
+#        - {{ compiler('c') }}
+
+test:
+    commands:
+        - libtool --help
+
+about:
+    home: http://www.gnu.org/software/libtool/
+    license: GPL 3
+    summary: The GNU Portable Library Tool
+
+extra:
+    recipe-maintainers:
+        - ocefpaf
+        - msarahan
+        - jakirkham

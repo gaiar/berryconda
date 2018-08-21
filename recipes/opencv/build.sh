@@ -16,7 +16,7 @@ if [ "${SHORT_OS_STR}" == "Darwin" ]; then
 fi
 
 curl -L -O "https://github.com/opencv/opencv_contrib/archive/$PKG_VERSION.tar.gz"
-test `openssl sha256 $PKG_VERSION.tar.gz | awk '{print $2}'` = "e94acf39cd4854c3ef905e06516e5f74f26dddfa6477af89558fb40a57aeb444"
+test `openssl sha256 $PKG_VERSION.tar.gz | awk '{print $2}'` = "298c69ee006d7675e1ff9d371ba8b0d9e7e88374bb7ba0f9d0789851d352ec6e"
 tar -zxf $PKG_VERSION.tar.gz
 
 mkdir -p build
@@ -54,13 +54,14 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$PREFIX/lib/pkgconfig
 
 cmake -LAH                                                                \
     -DCMAKE_BUILD_TYPE="Release"                                          \
-    -DCMAKE_INSTALL_PREFIX=${PREFIX}                                      \
     -DCMAKE_PREFIX_PATH=${PREFIX}                                         \
+    -DCMAKE_INSTALL_PREFIX=${PREFIX}                                      \
+    -DCMAKE_INSTALL_LIBDIR="lib"                                          \
     $OPENMP                                                               \
     -DOpenBLAS=1                                                          \
     -DOpenBLAS_INCLUDE_DIR=$PREFIX/include                                \
     -DOpenBLAS_LIB=$PREFIX/lib/libopenblas$SHLIB_EXT                      \
-    -DWITH_EIGEN=0                                                        \
+    -DWITH_EIGEN=1                                                        \
     -DBUILD_TESTS=0                                                       \
     -DBUILD_DOCS=0                                                        \
     -DBUILD_PERF_TESTS=0                                                  \
@@ -75,9 +76,10 @@ cmake -LAH                                                                \
     -DWITH_OPENCL=0                                                       \
     -DWITH_OPENNI=0                                                       \
     -DWITH_FFMPEG=1                                                       \
+    -DWITH_GSTREAMER=0                                                    \
     -DWITH_MATLAB=0                                                       \
     -DWITH_VTK=0                                                          \
-    -DWITH_QT=0                                                           \
+    -DWITH_QT=$QT                                                         \
     -DWITH_GPHOTO2=0                                                      \
     -DINSTALL_C_EXAMPLES=0                                                \
     -DOPENCV_EXTRA_MODULES_PATH="../opencv_contrib-$PKG_VERSION/modules"  \

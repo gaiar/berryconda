@@ -1,20 +1,22 @@
 {% set name = "nltk" %}
 {% set version = "3.2.5" %}
+{% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash_val = "2661f9971d983db314bbebd51ba770811a362c6597fd0f303bb1d3beadcb4834" %}
+{% set hash = "2661f9971d983db314bbebd51ba770811a362c6597fd0f303bb1d3beadcb4834" %}
+{% set build = 0 %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  {{ hash_type }}: {{ hash_val }}
+  fn: {{ name }}-{{ version }}.{{ bundle }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
+  {{ hash_type }}: {{ hash }}
 
 build:
-  number: 0
   noarch: python
+  number: {{ build }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
@@ -25,6 +27,14 @@ requirements:
   run:
     - python
     - six
+    - gensim
+    - numpy
+    - python-crfsuite
+    - scikit-learn
+    - scipy
+    - matplotlib
+    - pyparsing
+    - twython
     - requests
 
 test:
@@ -57,9 +67,13 @@ test:
 
 about:
   home: http://nltk.org/
-  license: Apache 2.0
   license_file: LICENSE.txt
+  license: Apache 2.0
   license_family: Apache
   summary: 'Natural Language Toolkit'
   dev_url: https://github.com/nltk/nltk
   doc_url: http://www.nltk.org/
+
+extra:
+  recipe-maintainers:
+    - pmlandwehr
