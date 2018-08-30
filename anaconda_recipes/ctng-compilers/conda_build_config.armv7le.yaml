@@ -1,0 +1,8 @@
+ctng_sample:
+  - arm-cortexa9_neon-linux-gnueabihf
+ctng_cpu_arch:
+  - armv7l
+ctng_vendor:
+  - unknown
+ctng_target_platform:
+  - linux-armv7l

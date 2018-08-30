@@ -33,7 +33,7 @@ ctng_gdb:
 ctng_duma:
   - 2.5.15
 ctng_vendor:
-  - rpi3-arm64
+  - rpi3
 ctng_target_platform:
   - linux-aarch64
 zip_keys:
