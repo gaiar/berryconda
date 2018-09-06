@@ -1,4 +1,5 @@
 # ignore created Berryconda installer files
 installer/*/*.sh
-nohup.out
+*/nohup.out
 */.svn/*
+.vscode/*
