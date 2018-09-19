@@ -3,7 +3,6 @@ pin_run_as_build:
     max_pin: x.x.x
 noarch_python:
   - False
-
 apr:
   - 1.6.3
 blas_impl:
@@ -40,15 +39,15 @@ ctng_isl:
 ctng_libc:
   - gnu
 ctng_kernel:
-  - 2.6.32
+  - 4.14
 ctng_libiconv:
-  - 1.15
+  - 1.14
 ctng_mpc:
-  - 1
+  - 1.0.3a
 ctng_nature:
   - shared
 ctng_ncurses:
-  - 6.1
+  - 6.0
 c_compiler_version:        # [linux]
   - 7.3.0                  # [linux]
 cxx_compiler_version:      # [linux]
@@ -76,10 +75,10 @@ giflib:
 glib:
   - 2.56
 gmp:
-  - 6.1
+  - 6.1.2
 # glibc used in ctng compiler builds
 gnu:
-  - 2.12.2
+  - 2.24
 harfbuzz:
   - 1.7
 hdf4:
@@ -122,7 +121,7 @@ libxslt:
 lzo:
   - 2
 mpfr:
-  - 4
+  - 3.1.5
 # we build for an old version of numpy for forward compatibility
 #    1.11 seems to be the oldest on win that works with scipy 0.19.  Compiler errors otherwise.
 #    also 1.9 fails tests on Python 3.7
