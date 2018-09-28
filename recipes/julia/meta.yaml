@@ -1,0 +1,79 @@
+{% set name = "julia" %}
+{% set version = "1.0.0" %}
+{% set sha256 = "aef997353def723862d76c2a4576bb330501bff20f87d44ad7eca3dca1890037" %}
+{% set variant = "openblas" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: v{{ version }}.tar.gz
+  url: https://github.com/JuliaLang/julia/archive/v{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  skip: True  # [win]
+  number: 0
+  features:
+    - blas_{{ variant }}
+
+requirements:
+  build:
+    - cmake
+    - perl
+    - python 2.7.*
+    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - patchelf  # [linux]
+    - zlib
+    - openblas
+    - openlibm 0.5.4
+    - openspecfun 0.5.3
+    - blas * {{ variant }}
+    - fftw
+    - gmp
+    - mpfr
+    - curl
+    - libgit2
+    - libosxunwind  # [osx]
+    - arpack
+    - suitesparse
+    - pcre2 10.23
+
+  run:
+    - zlib
+    - libgit2
+    - libosxunwind  # [osx]
+    - fftw
+    - gmp
+    - mpfr
+    - openblas
+    - openlibm 0.5.4
+    - openspecfun 0.5.3
+    - blas * {{ variant }}
+    - arpack
+    - suitesparse
+    - curl
+    - pcre2 10.23
+
+test:
+  commands:
+    - julia -e 'Base.runtests("LibGit2/online Pkg/pkg")'
+  requires:
+    - perl
+
+about:
+  home: http://julialang.org/
+  license: MIT
+  license_file: LICENSE.md
+  summary: A high-performance dynamic programming language for data science
+
+extra:
+  recipe-maintainers:
+    - bgruening
+    - dfornika
+    - acaprez
+    - mariusvniekerk

@@ -1,0 +1,46 @@
+{% set version = "3.6.2" %}
+{% set variant = "openblas" %}
+
+package:
+  name: arpack
+  version: {{ version }}
+
+source:
+  fn: arpack-{{ version }}.tar.gz
+  url: https://github.com/opencollab/arpack-ng/archive/{{ version }}.tar.gz
+  sha256: 673c8202de996fd3127350725eb1818e534db4e79de56d5dcee8c00768db599a
+
+build:
+  number: 201
+  features:
+    - blas_{{ variant }}
+  skip: true  # [win]
+
+requirements:
+  build:
+    - cmake
+    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - blas 1.1 {{ variant }}
+    - openblas  # [not win]
+
+  run:
+    - blas 1.1 {{ variant }}
+    - openblas  # [not win]
+
+test:
+  commands:
+    - test -f ${PREFIX}/lib/libarpack.a  # [unix]
+    - test -f ${PREFIX}/lib/libarpack${SHLIB_EXT}  # [unix]
+
+about:
+  home: https://github.com/opencollab/arpack-ng
+  license: BSD 3-Clause
+  license_file: COPYING
+  summary: Fortran77 subroutines designed to solve large scale eigenvalue problems
+
+extra:
+  recipe-maintainers:
+    - jschueller

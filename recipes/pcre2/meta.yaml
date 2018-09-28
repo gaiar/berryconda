@@ -1,0 +1,57 @@
+{% set name = "pcre2" %}
+{% set version = "10.23" %}
+{% set sha256 = "bd62f955146a41815d6e2ce011bb75740825c32906b06e377f478599f54ee0dd" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+  patches:
+    ##########################################################
+    # Apply an upstream patch to fix a broken test on macOS  #
+    #                                                        #
+    # ref: https://bugs.exim.org/show_bug.cgi?id=2157        #
+    ##########################################################
+    # - bug_2157.patch
+
+build:
+  number: 1000
+  skip: True  # [win]
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+
+test:
+  commands:
+    - pcre2test --version
+    - pcre2grep --version
+    - pcre2-config --version
+    - test -f ${PREFIX}/include/pcre2.h
+    - test -f ${PREFIX}/include/pcre2posix.h
+    - test -f ${PREFIX}/lib/libpcre2-posix.a      # [unix]
+    - test -f ${PREFIX}/lib/libpcre2-posix.so     # [linux]
+    - test -f ${PREFIX}/lib/libpcre2-posix.dylib  # [osx]
+
+about:
+  home: http://www.pcre.org/
+  license: PCRE2
+  license_family: BSD
+  license_file: LICENCE
+  summary: 'Regular expression pattern matching using Perl 5 syntax and semantics.'
+  description: |
+    The PCRE library is a set of functions that implement regular expression pattern matching
+    using the same syntax and semantics as Perl 5. PCRE has its own native API, as well as a set of
+    wrapper functions that correspond to the POSIX regular expression API. The PCRE library is
+    free, even for building proprietary software.
+  doc_url: http://www.pcre.org/current/doc/html/
+
+extra:
+  recipe-maintainers:
+    - dfornika
+    - mariusvniekerk
