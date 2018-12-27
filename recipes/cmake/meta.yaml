@@ -1,4 +1,4 @@
-{% set version = "3.12.2" %}
+{% set version = "3.13.2" %}
 
 package:
   name: cmake
@@ -7,10 +7,10 @@ package:
 source:
   url: https://gitlab.kitware.com/cmake/cmake/-/archive/v{{ version }}/cmake-v{{ version }}.tar.bz2
   fn: cmake-{{ version }}.tar.gz
-  sha256: 60292b8927bea2f8c17d9b485ec5cc26f23fd9120fc0fa0e435c3015fe732a62
+  sha256: 4284a377fc0a8cd7bcfafbfe1d83c6a3d832e11c07e4f8dc114a2f1f4dc775a2
 
 build:
-  number: 0
+  number: 1000
   skip: True  # [win and vc<14]
   ignore_run_exports:
     - vc
@@ -19,16 +19,16 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - make
+    - make            # [unix]
 
   host:
     - bzip2           # [unix]
-    - curl            # [unix]
+    - curl 7.61.1           # [unix]
     - expat           # [unix]
     - ncurses         # [unix]
     - xz              # [unix]
     - zlib            # [unix]
-    #- libuv           # [unix]
+    - libuv           # [unix]
     - rhash           # [unix]
 
   run:
@@ -38,7 +38,7 @@ requirements:
     - ncurses         # [unix]
     - xz              # [unix]
     - zlib            # [unix]
-    #- libuv           # [unix]
+    - libuv           # [unix]
     - rhash           # [unix]
     - vs2015_runtime  # [win]
 
