@@ -1,28 +1,34 @@
 #!/bin/bash
 
-# declare -a CMAKE_PLATFORM_FLAGS
-# if [[ ${HOST} =~ .*darwin.* ]]; then
-#   CMAKE_PLATFORM_FLAGS+=(-DCMAKE_OSX_SYSROOT="${CONDA_BUILD_SYSROOT}")
-#   # We have a problem with over-stripping of dylibs in the test programs:
-#   # nm ${PREFIX}/lib/libdf.dylib | grep error_top
-#   #   000000000006197c S _error_top
-#   # Then, despite this being linked to explicitly when creating the test programs:
-#   # ./hdf4_test_tst_chunk_hdf4
-#   # dyld: Symbol not found: _error_top
-#   #   Referenced from: ${PREFIX}/lib/libmfhdf.0.dylib
-#   #   Expected in: flat namespace
-#   #  in ${PREFIX}/lib/libmfhdf.0.dylib
-#   # Abort trap: 56
-#   # Now clearly libmfhdf should autoload libdf but it does not and that is not going to change:
-#   # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=556439
-#   # .. so we must remove our unused stripping instead :-(
-#   # (it may be possible to arrange this symbol to be in the 'D'ata section instead of 'S'
-#   #  (symbol in a section other than those above according to man nm), instead though
-#   #  or to fix ld64 so that it checks for symbols being used in this section).
-#   export LDFLAGS=$(echo "${LDFLAGS}" | sed "s/-Wl,-dead_strip_dylibs//g")
-# else
-#   CMAKE_PLATFORM_FLAGS+=(-DCMAKE_TOOLCHAIN_FILE="${RECIPE_DIR}/cross-linux.cmake")
-# fi
+if [[ ${c_compiler} != "toolchain_c" ]]; then
+    # This is needed to make sure the build env path doesn't
+    # leak into the build.
+    export CC=$(basename ${CC})
+
+    declare -a CMAKE_PLATFORM_FLAGS
+    if [[ ${HOST} =~ .*darwin.* ]]; then
+        CMAKE_PLATFORM_FLAGS+=(-DCMAKE_OSX_SYSROOT="${CONDA_BUILD_SYSROOT}")
+        # We have a problem with over-stripping of dylibs in the test programs:
+        # nm ${PREFIX}/lib/libdf.dylib | grep error_top
+        #   000000000006197c S _error_top
+        # Then, despite this being linked to explicitly when creating the test programs:
+        # ./hdf4_test_tst_chunk_hdf4
+        # dyld: Symbol not found: _error_top
+        #   Referenced from: ${PREFIX}/lib/libmfhdf.0.dylib
+        #   Expected in: flat namespace
+        #  in ${PREFIX}/lib/libmfhdf.0.dylib
+        # Abort trap: 56
+        # Now clearly libmfhdf should autoload libdf but it does not and that is not going to change:
+        # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=556439
+        # .. so we must remove our unused stripping instead :-(
+        # (it may be possible to arrange this symbol to be in the 'D'ata section instead of 'S'
+        #  (symbol in a section other than those above according to man nm), instead though
+        #  or to fix ld64 so that it checks for symbols being used in this section).
+        export LDFLAGS=$(echo "${LDFLAGS}" | sed "s/-Wl,-dead_strip_dylibs//g")
+    else
+        CMAKE_PLATFORM_FLAGS+=(-DCMAKE_TOOLCHAIN_FILE="${RECIPE_DIR}/cross-linux.cmake")
+    fi
+fi
 
 if [[ ${DEBUG_C} == yes ]]; then
   CMAKE_BUILD_TYPE=Debug
@@ -32,7 +38,7 @@ fi
 
 # Build static.
 cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} \
-      -DCMAKE_INSTALL_LIBDIR:PATH=${PREFIX}/lib \
+      -DCMAKE_INSTALL_LIBDIR="lib" \
       -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} \
       -DENABLE_DAP=ON \
       -DENABLE_HDF4=ON \
@@ -56,7 +62,7 @@ make clean
 
 # Build shared.
 cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} \
-      -DCMAKE_INSTALL_LIBDIR:PATH=${PREFIX}/lib \
+      -DCMAKE_INSTALL_LIBDIR="lib" \
       -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} \
       -DENABLE_DAP=ON \
       -DENABLE_HDF4=ON \
@@ -80,3 +86,15 @@ ctest -VV
 # Leave this test where it is. ATM, conda-build deletes host prefixes by the time it runs the
 # package tests which makes investigating problems very tricky. Pinging @msarahan about that.
 ncdump/ncdump -h http://geoport-dev.whoi.edu/thredds/dodsC/estofs/atlantic || exit $?
+
+if [[ ${c_compiler} != "toolchain_c" ]]; then
+    # Fix build paths in cmake artifacts
+    for fname in `ls ${PREFIX}/lib/cmake/netCDF/*`; do
+        sed -i.bak "s#${BUILD_PREFIX}#\$ENV\{BUILD_PREFIX\}#g" ${fname}
+        rm ${fname}.bak
+    done
+
+    # Fix build paths in nc-config
+    sed -i.bak "s#${BUILD_PREFIX}/bin/${CC}#${CC}#g" ${PREFIX}/bin/nc-config
+    rm ${PREFIX}/bin/nc-config.bak
+fi
