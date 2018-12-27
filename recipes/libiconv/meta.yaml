@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: ftp://ftp.halifax.rwth-aachen.de/gnu/libiconv/libiconv-{{ version }}.tar.gz
+  url: http://ftp.gnu.org/pub/gnu/libiconv/libiconv-{{ version }}.tar.gz
   sha256: ccf536620a45458d26ba83887a983b96827001e92a13847b45e4925cc8913178
   patches:
     - glibc.patch  # [linux]
@@ -14,7 +14,7 @@ source:
     - configure.cmake.patch  # [win]
 
 build:
-  number: 2
+  number: 1003
   run_exports:
     # Pretty good recently, let's trust them.
     #   https://abi-laboratory.pro/tracker/timeline/libiconv/
@@ -22,8 +22,9 @@ build:
 
 requirements:
   build:
-#    - {{ compiler('c') }}
+    - {{ compiler('c') }}
     - cmake   # [win]
+    - m2-patch  # [win]
 
 test:
   commands:
@@ -34,6 +35,7 @@ test:
 about:
   home: https://www.gnu.org/software/libiconv/
   license: GPL and LGPL
+  license_file: COPYING
   summary: "Provides iconv for systems which don't have one (or that cannot convert from/to Unicode.)"
 
 extra:

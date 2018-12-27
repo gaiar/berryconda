@@ -6,7 +6,7 @@ package:
 
 source:
   fn: ncurses-{{ version }}.tar.gz
-  url: ftp://ftp.halifax.rwth-aachen.de/gnu/ncurses/ncurses-{{ version }}.tar.gz
+  url: http://ftp.gnu.org/pub/gnu/ncurses/ncurses-{{ version }}.tar.gz
   md5: 98c889aaf8d23910d2b92d65be2e737a
   patches:
     # http://lists.gnu.org/archive/html/bug-ncurses/2015-01/msg00016.html
@@ -16,6 +16,17 @@ build:
   skip: true  # [win]
   number: 1
   detect_binary_files_with_prefix: true
+  run_exports:
+    # pretty good compat within major version
+    #  https://abi-laboratory.pro/tracker/timeline/ncurses/
+    - {{ pin_subpackage('ncurses') }}
+
+requirements:
+  build:
+    - pkg-config
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
 
 requirements:
   build:

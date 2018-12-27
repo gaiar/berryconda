@@ -9,8 +9,10 @@ source:
   sha256: 34a7377ba834397db019e8eb122e551a49c98f49df75ec3fcc92b9a794a4f6d1
 
 build:
-  number: 0
-  skip: true  # [win and vc<14]
+  number: 1
+  # the sln file from the URL below is gone :-/
+  # http://www.chemformatter.com/build-with-visual-studio-2015/giflib/giflib-5.1.4-vs14.zip
+  skip: true  # [win]
   run_exports:
     # SONAME changes at minor revs.
     #    https://abi-laboratory.pro/tracker/timeline/giflib/
@@ -36,8 +38,6 @@ test:
     - giffix.exe -h  # [win]
     - gifinto.exe -h  # [win]
     - giftext.exe -h  # [win]
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: http://giflib.sourceforge.net

@@ -10,7 +10,7 @@ source:
   sha256: d9dc32efba7e74f788fcc4f212a43216fc37cf5f23f4c2339664d473353aedf6
 
 build:
-  number: 1
+  number: 2
   run_exports:
     # changes soname at major versions, default settings OK
     # https://abi-laboratory.pro/tracker/timeline/expat/
@@ -19,16 +19,14 @@ build:
 requirements:
   build:
     - cmake  # [win]
-#    - {{ compiler('c') }}
-#    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
   host:
     - msinttypes  # [win and vc<14]
 
 test:
   commands:
     - xmlwf -h
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: http://expat.sourceforge.net/

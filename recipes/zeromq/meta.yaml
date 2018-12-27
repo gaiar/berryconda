@@ -17,6 +17,11 @@ source:
 
 build:
   number: 5
+  run_exports:
+    # ZeroMQ have a terribe track record of SONAME management between minor
+    # versions and across the two supported build systems unfortunately.
+    #    https://abi-laboratory.pro/tracker/timeline/zeromq/
+    - {{ pin_subpackage('zeromq', max_pin='x.x.x') }}
 
 requirements:
   build:

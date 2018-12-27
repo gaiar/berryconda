@@ -9,7 +9,7 @@ source:
   sha256: 2b82ab3e996803b80bc73206857e826a155d3ebb374e8eb03a87a63c6f672cf7
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # SO name changes at minor rev bumps.
     - {{ pin_subpackage('libpng', max_pin='x.x') }}

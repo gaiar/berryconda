@@ -1,20 +1,17 @@
-{% set name = "PyYAML" %}
-{% set version = "3.12" %}
-{% set sha256 = "592766c6303207a20efc445587778322d7f73b161bd994f227adaa341ba212ab" %}
-{% set build = 1 %}
-
+{% set version = "3.13" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/P/PyYAML/PyYAML-{{ version }}.tar.gz
+  sha256: 3ef3092145e9b70e3ddd2c7ad59bdd0252a94dfe3949721633e41344de00a6bf
+  patches:
+    - 0001-Ensure-we-do-not-end-up-wih-CRLF-line-endings-on-tes.patch
 
 build:
-  number: {{ build }}
+  number: 1
   script:
     - python setup.py --with-libyaml build_ext --include-dirs="${PREFIX}/include" --library-dirs="${PREFIX}/lib"  # [unix]
     - python setup.py --with-libyaml build_ext --include-dirs="%LIBRARY_INC%" --library-dirs="%LIBRARY_LIB%"      # [win]
@@ -23,9 +20,11 @@ build:
 
 requirements:
   build:
+    - {{ compiler('c') }}
+  host:
     - python
+    - cython
     - yaml
-
   run:
     - python
     - yaml
@@ -47,5 +46,7 @@ about:
 extra:
   recipe-maintainers:
     - jakirkham
+    - jjhelmus
     - msarahan
     - pelson
+    - ocefpaf

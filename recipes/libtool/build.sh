@@ -1,7 +1,12 @@
 #!/bin/sh
 
-./configure --prefix=$PREFIX
+export HELP2MAN=$(which true)
 
-make -j${CPU_COUNT}
-make -j${CPU_COUNT} check
+./configure --prefix=${PREFIX}
+
+make -j${CPU_COUNT} ${VERBOSE_AT}
+make check
 make install
+
+# We can remove this when we start using the new conda-build.
+find $PREFIX -name '*.la' -delete

@@ -17,8 +17,8 @@ requirements:
   build:
     - m4
     - perl
-#    - {{ compiler('c') }}
-#    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
   host:
     - flex
 

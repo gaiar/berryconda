@@ -1,4 +1,4 @@
-{% set version = "2.3" %}
+{% set version = "2.3.1" %}
 
 package:
   name: cryptography
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/c/cryptography/cryptography-{{ version }}.tar.gz
-  sha256: c132bab45d4bd0fff1d3fe294d92b0a6eb8404e93337b3127bdec9f21de117e6
+  sha256: 8d10113ca826a4c29d5b85b2c4e045ffa8bad74fb525ee0eceb1d38d4c70dfd6
 
 build:
   number: 0
@@ -25,7 +25,6 @@ requirements:
     - pip
     - openssl
     - cffi >=1.7
-    - cryptography-vectors {{ version }}
   run:
     - python
     - openssl
@@ -35,7 +34,6 @@ requirements:
     - asn1crypto >=0.21.0
     - six >=1.4.1
     - idna >=2.1
-    - cryptography-vectors {{ version }}
 
 test:
   imports:

@@ -22,8 +22,10 @@ build:
 
 requirements:
   build:
-    - toolchain  # [unix]
+    - {{ compiler('c') }}  # [unix]
     - cmake 3.*
+
+  host:
     - python     # [win]
     - vc 9       # [win and py27]
     - vc 14      # [win and py36]

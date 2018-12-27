@@ -6,12 +6,17 @@ package:
 
 source:
   fn: m4-{{ version }}.tar.gz
-  url: ftp://ftp.halifax.rwth-aachen.de/gnu/m4/m4-{{ version }}.tar.gz
+  url: http://ftp.gnu.org/gnu/m4/m4-{{ version }}.tar.gz
   sha256: ab2633921a5cd38e48797bf5521ad259bdc4b979078034a3b790d7fec5493fab
 
 build:
   number: 0
   skip: True  # [win]
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - make
 
 test:
   commands:
