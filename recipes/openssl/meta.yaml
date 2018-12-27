@@ -1,15 +1,17 @@
+{% set name = "openssl" %}
 {% set version = "1.0.2p" %}
 
 package:
-  name: openssl
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: http://www.openssl.org/source/openssl-{{ version }}.tar.gz
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: http://www.openssl.org/source/{{ name }}-{{ version }}.tar.gz
   sha256: 50a98e07b1a89eb8f6a99477f262df71c6fa7bef77df4dc83025a2845c827d00
 
 build:
-  number: 0
+  number: 1001
   no_link: lib/libcrypto.so.1.0.0        # [linux]
   no_link: lib/libcrypto.1.0.0.dylib     # [osx]
   has_prefix_files:                      # [unix]
@@ -27,12 +29,12 @@ requirements:
     - yasm               # [win32]
     - perl
     - make               # [unix]
+  # Empty host section to ensure that this is identified as cb3
+  host:
   run:
     - ca-certificates
 
 test:
-  imports:
-    - ssl
   commands:
     - copy NUL checksum.txt        # [win]
     - touch checksum.txt           # [unix]
