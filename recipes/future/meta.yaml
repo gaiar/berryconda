@@ -1,30 +1,25 @@
-{% set name = "future" %}
-{% set version = "0.16.0" %}
-{% set sha256 = "e39ced1ab767b5936646cedba8bcce582398233d6a627067d4c6a454c90cfedb" %}
+{% set version = "0.17.0" %}
 
 
 package:
-  name: {{ name }}
+  name: future
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/f/future/future-{{ version }}.tar.gz
+  sha256: eb6d4df04f1fb538c99f69c9a28b255d1ee4e825d479b9c62fc38c0cf38065a4
 
 build:
-  number: 2
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 1000
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   entry_points:
     - futurize = libfuturize.main:main
     - pasteurize = libpasteurize.main:main
 
 requirements:
   host:
-    - pip
     - python
-    - setuptools
-
+    - pip
   run:
     - python
 
@@ -53,3 +48,4 @@ extra:
   recipe-maintainers:
     - jakirkham
     - mmysinger
+    - ocefpaf

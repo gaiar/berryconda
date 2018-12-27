@@ -1,5 +1,5 @@
 {% set name = "param" %}
-{% set version = "1.7.0" %}
+{% set version = "1.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -9,7 +9,7 @@ package:
 source:
   fn: param-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/p/param/param-{{ version }}.tar.gz
-  sha256: 02307e39323ec7c01aa8874e6512e67e441037a1527196fe4f1c4b00f931cae7
+  sha256: 474bdd2d4a0b95c51bb39a74010a13146dafab848c21b95171a54b50abb074d3
 
 build:
   number: 0

@@ -13,10 +13,9 @@ source:
     - icu4c-4_9_1-mingw-w64-mkdir-compatibility.patch  # [win]
     # Omit lib prefix on libraries.
     - icu-config.patch  # [win]
-    - icudata-stdlibs.patch
 
 build:
-  number: 0
+  number: 1000
 
 requirements:
   build:

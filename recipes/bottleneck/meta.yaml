@@ -9,8 +9,8 @@ source:
   sha256: 6efcde5f830aed64feafca0359b51db0e184c72af8ba6675b4a99f263922eb36
 
 build:
-  number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 1001
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
   build:
@@ -40,7 +40,7 @@ test:
     - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
-  home: http://berkeleyanalytics.com/bottleneck
+  home: https://github.com/kwgoodman/bottleneck
   license: BSD 2-Clause
   license_family: BSD
   license_file: bottleneck/LICENSE

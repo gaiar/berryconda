@@ -10,13 +10,9 @@ source:
   fn: make-{{ version }}.tar.bz2
   url: https://ftp.gnu.org/gnu/make/make-{{ version }}.tar.bz2
   sha256: {{ sha256 }}
-  patches:
-    # https://git.savannah.gnu.org/cgit/make.git/commit/?id=d9d4e06084a4c7da480bd49a3487aadf6ba77b54
-    - d9d4e06084a4c7da480bd49a3487aadf6ba77b54.patch
 
 build:
   number: 2002
-  detect_binary_files_with_prefix: False
 
 requirements:
   build:

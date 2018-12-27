@@ -1,7 +1,7 @@
 {% set name = "pytest-openfiles" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 {% set git_url = "https://github.com/astropy/pytest-openfiles" %}
-{% set sha256 = "be5e6a0e7c6a64e58a27bdcdd9ab2aa09a9a9c9a525499ee08d2e77e2c19f535" %}
+{% set sha256 = "bf09cd83ca0554799292f536800f54e4892f8000283daaf9d9fc6b6eb2d8a9da" %}
 
 package:
   name: {{ name|lower }}
