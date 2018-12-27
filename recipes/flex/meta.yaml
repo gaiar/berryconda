@@ -10,7 +10,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 3
+  number: 1003
   detect_binary_files_with_prefix: true
 
 requirements:
@@ -20,6 +20,7 @@ requirements:
     - automake
     - m4
     - libiconv  # [not linux and not win]
+    - help2man  # [not win]
   run:
     - libiconv  # [not linux and not win]
     - m4
