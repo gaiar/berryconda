@@ -3,4 +3,4 @@ installer/*/*.sh
 */nohup.out
 */.svn/*
 .vscode/*
-nohup.out
+*nohup.out*
