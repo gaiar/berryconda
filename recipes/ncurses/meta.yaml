@@ -14,25 +14,14 @@ source:
 
 build:
   skip: true  # [win]
-  number: 1
+  number: 1002
   detect_binary_files_with_prefix: true
-  run_exports:
-    # pretty good compat within major version
-    #  https://abi-laboratory.pro/tracker/timeline/ncurses/
-    - {{ pin_subpackage('ncurses') }}
 
 requirements:
   build:
     - pkg-config
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-  host:
-
-requirements:
-  build:
-    - pkg-config
-#    - {{ compiler('c') }}
-#    - {{ compiler('cxx') }}
   host:
 
 test:
@@ -126,4 +115,3 @@ about:
 extra:
   recipe-maintainers:
     - jakirkham
-    - jjhelmus
