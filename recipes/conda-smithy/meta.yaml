@@ -1,4 +1,4 @@
-{% set version = "3.1.11" %}
+{% set version = "3.2.2" %}
 
 package:
   name: conda-smithy
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/conda-forge/conda-smithy/releases/download/v{{ version }}/conda-smithy-{{ version }}.tar.gz
-  sha256: a453a55b2adb295da55b3b9edcdddd4036dbb95bf8d1cb83c0df8eb9d0f5ffcb
+  sha256: 3745e6a6d244d0769a5520824aba08c19de494f0bbdcd4bd092955b158b1d59c
 
 build:
-  number: 0
+  number: 2
   noarch: python
   script:
     - "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
@@ -20,11 +20,11 @@ build:
     - conda-smithy = conda_smithy.cli:main
 
 requirements:
-  build:
-    - python
+  host:
+    - python >=3.5
     - pip
   run:
-    - python
+    - python >=3.5
     - conda >=4.2
     - conda-build >=3.8.1
     - jinja2
@@ -33,6 +33,7 @@ requirements:
     - gitpython
     - pygithub <2
     - ruamel.yaml
+    - vsts-python-api
     - conda-forge-pinning
 
 test:
