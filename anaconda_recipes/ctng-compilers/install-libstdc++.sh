@@ -8,8 +8,8 @@ export PATH=${SRC_DIR}/gcc_built/bin:${SRC_DIR}/.build/${CHOST}/buildtools/bin:$
 
 pushd ${SRC_DIR}/.build/${CHOST}/build/build-cc-gcc-final/
 
-make -C ${CHOST}/libstdc++-v3/src prefix=${PREFIX} install-toolexeclibLTLIBRARIES
-make -C ${CHOST}/libstdc++-v3/po prefix=${PREFIX} install
+  make -C ${CHOST}/libstdc++-v3/src prefix=${PREFIX} install-toolexeclibLTLIBRARIES
+  make -C ${CHOST}/libstdc++-v3/po prefix=${PREFIX} install
 
 popd
 
@@ -18,8 +18,8 @@ mv ${PREFIX}/${CHOST}/lib/* ${PREFIX}/lib
 mkdir -p ${PREFIX}/${CHOST}/sysroot/lib || true
 symtargets=$(find ${PREFIX}/lib -name "libstdc++*.so*")
 for symtarget in ${symtargets}; do
-	symtargetname=$(basename ${symtarget})
-	ln -s ${PREFIX}/lib/${symtargetname} ${PREFIX}/${CHOST}/sysroot/lib/${symtargetname}
+  symtargetname=$(basename ${symtarget})
+  ln -s ${PREFIX}/lib/${symtargetname} ${PREFIX}/${CHOST}/sysroot/lib/${symtargetname}
 done
 
 # no static libs
@@ -29,4 +29,4 @@ find ${PREFIX}/lib -name "*\.la" -exec rm -rf {} \;
 
 # Install Runtime Library Exception
 install -Dm644 ${SRC_DIR}/.build/src/gcc-${PKG_VERSION}/COPYING.RUNTIME \
-	${PREFIX}/share/licenses/libstdc++/RUNTIME.LIBRARY.EXCEPTION
+        ${PREFIX}/share/licenses/libstdc++/RUNTIME.LIBRARY.EXCEPTION

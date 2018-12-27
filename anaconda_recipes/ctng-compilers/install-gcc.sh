@@ -121,13 +121,9 @@ popd
 # Install kernel headers
 kernel_arch=${ctng_cpu_arch}
 if [[ ${kernel_arch} == aarch64 ]]; then
-	kernel_arch=arm64
+  kernel_arch=arm64
 elif [[ ${kernel_arch} == i686 ]]; then
-	kernel_arch=x86
-elif [[ ${kernel_arch} == armv7l ]]; then
-	kernel_arch=arm
-elif [[ ${kernel_arch} == armv6l ]]; then
-	kernel_arch=arm
+  kernel_arch=x86
 fi
 
 make -C ${SRC_DIR}/.build/src/linux-* CROSS_COMPILE=${CHOST}- O=${SRC_DIR}/.build/${CHOST}/build/build-kernel-headers ARCH=${kernel_arch} INSTALL_HDR_PATH=${PREFIX}/${CHOST}/sysroot/usr ${VERBOSE_AT} headers_install
@@ -211,3 +207,5 @@ pushd ${PREFIX}
     esac
   done
 popd
+
+${PREFIX}/bin/${CHOST}-gcc "${RECIPE_DIR}"/c11threads.c -std=c11

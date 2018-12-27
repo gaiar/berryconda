@@ -14,9 +14,9 @@ make -C gcc prefix=${PREFIX} c++.install-common
 # How it used to be:
 # install -m755 -t ${PREFIX}/bin/ gcc/{cc1plus,lto1}
 for file in cc1plus; do
-	if [[ -f gcc/${file} ]]; then
-		install -c gcc/${file} ${PREFIX}/${_libdir}/${file}
-	fi
+  if [[ -f gcc/${file} ]]; then
+    install -c gcc/${file} ${PREFIX}/${_libdir}/${file}
+  fi
 done
 
 make -C $CHOST/libstdc++-v3/src prefix=${PREFIX} install
@@ -39,15 +39,15 @@ ${PREFIX}/bin/${CHOST}-g++ "${RECIPE_DIR}"/hello-world.cpp
 # and strip in there so that we do not change files that are not
 # part of this package.
 pushd ${PREFIX}
-_files=$(find . -type f)
-for _file in ${_files}; do
-	_type="$(file "${_file}" | cut -d ' ' -f 2-)"
-	case "${_type}" in
-	*script*executable*) ;;
-
-	*executable*)
-		${SRC_DIR}/gcc_built/bin/${CHOST}-strip --strip-all -v "${_file}"
-		;;
-	esac
-done
+  _files=$(find . -type f)
+  for _file in ${_files}; do
+    _type="$( file "${_file}" | cut -d ' ' -f 2- )"
+    case "${_type}" in
+      *script*executable*)
+      ;;
+      *executable*)
+        ${SRC_DIR}/gcc_built/bin/${CHOST}-strip --strip-all -v "${_file}"
+      ;;
+    esac
+  done
 popd

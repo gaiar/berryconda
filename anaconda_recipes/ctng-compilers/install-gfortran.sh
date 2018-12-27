@@ -18,16 +18,16 @@ make -C gcc prefix=${PREFIX} fortran.install-{common,man,info}
 # How it used to be:
 # install -Dm755 gcc/f951 ${PREFIX}/${_libdir}/f951
 for file in f951; do
-	if [[ -f gcc/${file} ]]; then
-		install -c gcc/${file} ${PREFIX}/${_libdir}/${file}
-	fi
+  if [[ -f gcc/${file} ]]; then
+    install -c gcc/${file} ${PREFIX}/${_libdir}/${file}
+  fi
 done
 
 mkdir -p ${PREFIX}/${CHOST}/sysroot/lib
 cp ${CHOST}/libgfortran/libgfortran.spec ${PREFIX}/${CHOST}/sysroot/lib
 
 pushd ${PREFIX}/bin
-ln -s ${CHOST}-gfortran ${CHOST}-f95
+  ln -s ${CHOST}-gfortran ${CHOST}-f95
 popd
 
 popd
@@ -37,7 +37,7 @@ rsync -av ${SRC_DIR}/gcc_built/lib/gcc/${CHOST}/${ctng_gcc}/finclude/ $PREFIX/li
 
 # Install Runtime Library Exception
 install -Dm644 $SRC_DIR/.build/src/gcc-${PKG_VERSION}/COPYING.RUNTIME \
-	${PREFIX}/share/licenses/gcc-fortran/RUNTIME.LIBRARY.EXCEPTION
+        ${PREFIX}/share/licenses/gcc-fortran/RUNTIME.LIBRARY.EXCEPTION
 
 # generate specfile so that we can patch loader link path
 # link_libgcc should have the gcc's own libraries by default (-R)
@@ -48,25 +48,25 @@ install -Dm644 $SRC_DIR/.build/src/gcc-${PKG_VERSION}/COPYING.RUNTIME \
 #   setting LINK_LIBGCC_SPECS on configure
 #   setting LINK_LIBGCC_SPECS on make
 #   setting LINK_LIBGCC_SPECS in gcc/Makefile
-specdir=$(dirname $($PREFIX/bin/${CHOST}-gcc -print-libgcc-file-name -no-canonical-prefixes))
+specdir=`dirname $($PREFIX/bin/${CHOST}-gcc -print-libgcc-file-name -no-canonical-prefixes)`
 mv $PREFIX/bin/${CHOST}-gfortran $PREFIX/bin/${CHOST}-gfortran.bin
-echo '#!/bin/sh' >$PREFIX/bin/${CHOST}-gfortran
-echo $PREFIX/bin/${CHOST}-gfortran.bin -specs=$specdir/specs '"$@"' >>$PREFIX/bin/${CHOST}-gfortran
+echo '#!/bin/sh' > $PREFIX/bin/${CHOST}-gfortran
+echo $PREFIX/bin/${CHOST}-gfortran.bin -specs=$specdir/specs '"$@"' >> $PREFIX/bin/${CHOST}-gfortran
 chmod +x $PREFIX/bin/${CHOST}-gfortran
 
 # Strip executables, we may want to install to a different prefix
 # and strip in there so that we do not change files that are not
 # part of this package.
 pushd ${PREFIX}
-_files=$(find . -type f)
-for _file in ${_files}; do
-	_type="$(file "${_file}" | cut -d ' ' -f 2-)"
-	case "${_type}" in
-	*script*executable*) ;;
-
-	*executable*)
-		${SRC_DIR}/gcc_built/bin/${CHOST}-strip --strip-all -v "${_file}"
-		;;
-	esac
-done
+  _files=$(find . -type f)
+  for _file in ${_files}; do
+    _type="$( file "${_file}" | cut -d ' ' -f 2- )"
+    case "${_type}" in
+      *script*executable*)
+      ;;
+      *executable*)
+        ${SRC_DIR}/gcc_built/bin/${CHOST}-strip --strip-all -v "${_file}"
+      ;;
+    esac
+  done
 popd
