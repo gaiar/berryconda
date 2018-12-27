@@ -1,4 +1,4 @@
-{% set version = "4.9.0" %}
+{% set version = "5.1.0" %}
 
 package:
   name: ipykernel
@@ -6,43 +6,56 @@ package:
 
 source:
   url: https://pypi.io/packages/source/i/ipykernel/ipykernel-{{ version }}.tar.gz
-  sha256: c5a498c70f7765c34f3397cf943b069057f5bef4e0218e4cfbb733e9f38fa5fa
+  sha256: 0fc0bf97920d454102168ec2008620066878848fcfca06c22b669696212e292f
 
 build:
-  number: 0
+  number: 1001
+  skip: True  # [py<34]
   script:
     - "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
-    - python -m ipykernel install --prefix $PREFIX  # [not win]
-    - python -m ipykernel install --prefix %PREFIX%  # [win]
+    - python -m ipykernel install --prefix {{ PREFIX }}
 
 requirements:
-  build:
+  host:
+    - ipython >=5.0
+    - jupyter_client
     - pip
     - python
-    - jupyter_client
-    - ipython >=4.0
-    - tornado >=4.0
   run:
-    - python
-    - ipython >=4.0
-    - traitlets >=4.1
+    - ipython >=5.0
     - jupyter_client
+    - python
     - tornado >=4.0
+    - traitlets >=4.1
 
 test:
+  requires:
+    - curio  # [unix]
+    - matplotlib
+    - nose
+    - numpy
+    - pytest
+    - trio
   imports:
     - ipykernel
+  commands:
+    - jupyter kernelspec list
+    - pytest --pyargs ipykernel
 
 about:
-  home: http://ipython.org
-  license: BSD 3-clause
+  home: https://ipython.org
+  license: BSD-3-Clause
   license_file: COPYING.md
   summary: IPython Kernel for Jupyter
+  dev_url: https://github.com/ipython/ipykernel
+  doc_url: https://ipython.readthedocs.io
 
 extra:
   recipe-maintainers:
+    - blink1073
+    - bollwyvl
+    - Carreau
     - jakirkham
-    - pelson
     - minrk
     - ocefpaf
-    - blink1073
+    - pelson
