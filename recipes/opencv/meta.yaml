@@ -1,4 +1,4 @@
-{% set version = "3.4.1" %}
+{% set version = "3.4.4" %}
 {% set blas_variant = "openblas" %}
 
 package:
@@ -6,9 +6,17 @@ package:
   version: {{ version }}
 
 source:
-  fn: opencv-{{ version }}.tar.gz
-  url: https://github.com/opencv/opencv/archive/{{ version }}.tar.gz
-  sha256: f1b87684d75496a1054405ae3ee0b6573acaf3dad39eaf4f1d66fdd7e03dc852
+  - url: https://github.com/opencv/opencv/archive/{{ version }}.tar.gz
+    fn: opencv-{{ version }}.tar.gz
+    sha256: a35b00a71d77b484f73ec485c65fe56c7a6fa48acd5ce55c197aef2e13c78746
+    patches:
+      - 13232-fix_numThreadsMax_for_OpenMP.patch
+  - url: https://github.com/opencv/opencv_contrib/archive/{{ version }}.tar.gz
+    fn: opencv_contrib-{{ version }}.tar.gz
+    sha256: 765446d994713363554978d1da447fef77a2cdf9e38742f0a98b13b92652626d
+    folder: opencv_contrib
+    patches:
+      - 1905-cvv_repair_build.patch
 
 build:
   number: 201
@@ -19,18 +27,14 @@ build:
 
 requirements:
   build:
-    - openssl 1.0.*                # [unix]
-    - curl >=7.44.0,<8
+    # Required to find ffpmeg
+    - pkg-config                   # [not win]
+    - m2-patch                     # [win]
     - cmake
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - python
-    - pkgconfig                    # [unix]
-    # For sha256 comparisons of opencv_contrib
-    # For downloading opencv_contrib
-    # For applying patches
-    - git                          # [win]
     - numpy
     - hdf5                         # [unix]
     - eigen 3.2.*
@@ -115,6 +119,9 @@ test:
             "xobjdetect",
             "xphoto"
         ] %}
+        - g++ $RECIPE_DIR/test.cpp -I$PREFIX/include  -L$PREFIX/lib -o test   # [unix]
+        - if [[ $(./test) != $PKG_VERSION ]]; then exit 1 ; fi                # [unix]
+        - if [[ $($PYTHON -c 'import cv2; print(cv2.__version__)') != $PKG_VERSION ]]; then exit 1; fi  # [unix]
         {% for each_opencv_lib in opencv_libs %}
         - test -f $PREFIX/lib/libopencv_{{ each_opencv_lib }}${SHLIB_EXT}                  # [unix]
         - if not exist %PREFIX%\\Library\\bin\\opencv_{{ each_opencv_lib }}{{ win_ver_lib }}.dll exit 1  # [win]
@@ -127,6 +134,7 @@ about:
   home: http://opencv.org/
   license: BSD 3-clause
   summary: Computer vision and machine learning software library.
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
@@ -136,3 +144,4 @@ extra:
     - zym1010
     - hajapy
     - ocefpaf
+    - hmaarrfk
