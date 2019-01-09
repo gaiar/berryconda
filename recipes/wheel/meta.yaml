@@ -1,4 +1,4 @@
-{% set version = "0.31.1" %}
+{% set version = "0.32.3" %}
 
 package:
   name: wheel
@@ -6,13 +6,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/w/wheel/wheel-{{ version }}.tar.gz
-  sha256: 0a2e54558a0628f2145d2fc822137e322412115173e8a2ddbe1c9024338ae83c
+  sha256: 029703bf514e16c8271c3821806a1c171220cc5bdd325cbf4e7da1e056a01db6
 
 build:
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record=record.txt
   entry_points:
-    - wheel = wheel.tool:main
+    - wheel = wheel.cli:main
 
 requirements:
   host:
@@ -25,13 +25,11 @@ requirements:
 test:
   imports:
     - wheel
-    - wheel.signatures
-    - wheel.tool
   commands:
     - wheel --help
 
 about:
-  home: https://bitbucket.org/pypa/wheel/
+  home: https://github.com/pypa/wheel
   license: MIT
   license_file: LICENSE.txt
   summary: A built-package format for Python.

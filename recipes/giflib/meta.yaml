@@ -9,7 +9,7 @@ source:
   sha256: 34a7377ba834397db019e8eb122e551a49c98f49df75ec3fcc92b9a794a4f6d1
 
 build:
-  number: 1
+  number: 1001
   # the sln file from the URL below is gone :-/
   # http://www.chemformatter.com/build-with-visual-studio-2015/giflib/giflib-5.1.4-vs14.zip
   skip: true  # [win]

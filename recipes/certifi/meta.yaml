@@ -1,4 +1,4 @@
-{% set version = "2018.8.24" %}
+{% set version = "2018.11.29" %}
 
 package:
   name: certifi
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/c/certifi/certifi-{{ version }}.tar.gz
-  sha256: 376690d6f16d32f9d1fe8932551d80b23e9d393a8578c5633a2ed39a64861638
+  sha256: 47f9c83ef4c0c621eaef743f133f09fa8a74a9b75f037e8624f83bd1b6626cb7
 
 build:
-  number: 1
+  number: 1000
   preserve_egg_dir: True
   script: python setup.py install
 

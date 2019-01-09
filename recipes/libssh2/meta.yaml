@@ -9,7 +9,9 @@ source:
   sha256: 39f34e2f6835f4b992cafe8625073a88e5a28ba78f83e8099610a7b3af4676d4
 
 build:
-  number: 2
+  number: 1003
+  run_exports:
+    - {{ pin_subpackage('libssh2') }}
 
 requirements:
   build:
@@ -31,19 +33,16 @@ test:
     - test -f $PREFIX/include/libssh2_sftp.h         # [not win]
 
     - test -f $PREFIX/lib/libssh2.a                  # [not win]
-    - test -f $PREFIX/lib/libssh2.so                 # [linux]
-    - test -f $PREFIX/lib/libssh2.dylib              # [osx]
+    - test -f $PREFIX/lib/libssh2${SHLIB_EXT}  # [not win]
 
     - if not exist %LIBRARY_INC%\\libssh2.h           exit 1  # [win]
     - if not exist %LIBRARY_INC%\\libssh2_publickey.h exit 1  # [win]
     - if not exist %LIBRARY_INC%\\libssh2_sftp.h      exit 1  # [win]
     - if not exist %LIBRARY_LIB%\\libssh2.lib         exit 1  # [win]
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: https://www.libssh2.org/
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_family: BSD
   license_file: COPYING
   summary: 'the SSH library'

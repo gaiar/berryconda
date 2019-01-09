@@ -1,4 +1,4 @@
-{% set version = "2.1.4" %}
+{% set version = "3.0.2" %}
 
 package:
   name: bleach
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/b/bleach/bleach-{{ version }}.tar.gz
-  sha256: 0ee95f6167129859c5dce9b1ca291ebdb5d8cd7e382ca0e237dfd0dad63f63d8
+  sha256: 48d39675b80a75f6d1c3bdbffec791cf0bbbab665cf01e20da701c77de278718
 
 build:
   number: 1
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: "{{ PYTHON }} -m pip install . -vvv"
 
 requirements:
   host:
@@ -19,9 +19,9 @@ requirements:
     - pip
   run:
     - python
-    - html5lib >=0.99999999pre,!=1.0b1,!=1.0b2,!=1.0b3,!=1.0b4,!=1.0b5,!=1.0b6,!=1.0b7,!=1.0b8
     - setuptools
     - six
+    - webencodings
 
 test:
   imports:

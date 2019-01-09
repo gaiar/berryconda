@@ -1,6 +1,6 @@
 {% set name = "zeromq" %}
-{% set version = "4.2.5" %}
-{% set sha256 = "cc9090ba35713d59bb2f7d7965f877036c49c5558ea0c290b0dcc6f2a17e489f" %}
+{% set version = "4.3.0" %}
+{% set sha256 = "8e9c3af6dc5a8540b356697081303be392ade3f014615028b3c896d0148397fd" %}
 
 package:
   name: {{ name|lower }}
@@ -16,19 +16,16 @@ source:
     - 0005-osx-test.patch  # [osx]
 
 build:
-  number: 5
+  number: 1000
   run_exports:
-    # ZeroMQ have a terribe track record of SONAME management between minor
-    # versions and across the two supported build systems unfortunately.
-    #    https://abi-laboratory.pro/tracker/timeline/zeromq/
-    - {{ pin_subpackage('zeromq', max_pin='x.x.x') }}
+    - {{ pin_compatible(name, max_pin='x.x') }}
 
 requirements:
   build:
-    - automake                     # [osx]
-    - autoconf                     # [osx]
+    - automake                     # [unix]
+    - autoconf                     # [unix]
     - cmake                        # [win]
-    - libtool                      # [osx]
+    - libtool                      # [unix]
     - pkg-config                   # [unix]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}

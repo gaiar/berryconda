@@ -1,20 +1,17 @@
-{% set name = "astroid" %}
-{% set version = "2.0.2" %}
-{% set sha256 = "a48b57ede295c3188ef5c84273bc2a8eadc46e4cbb001eae0d49fb5d1fabbb19" %}
+{% set version = "2.1.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: astroid
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/a/astroid/astroid-{{ version }}.tar.gz
+  sha256: 35b032003d6a863f5dcd7ec11abd5cd5893428beaa31ab164982403bcb311f22
 
 build:
-  number: 0
+  number: 1000
   skip: True  # [py2k]
-  script: python -m pip install --no-deps --ignore-installed .
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
   host:
@@ -53,3 +50,4 @@ extra:
     - ericdill
     - jakirkham
     - jjhelmus
+    - ocefpaf

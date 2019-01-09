@@ -1,0 +1,42 @@
+{% set version = "2.5" %}
+
+package:
+  name: pandoc
+  version: {{ version }}
+
+source:
+  fn: pandoc.deb  # [linux]
+  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-1-amd64.deb  # [linux64]
+  sha256: 56c6bd9613818c71594052d676d898dbb88580b266ec98f1becf9a97bac7aa37  # [linux64]
+
+  fn: pandoc.pkg  # [osx]
+  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-macOS.pkg  # [osx]
+  sha256: bf5bbc122ce20f87eff8a9f7a795b389963b6d71085f9da6dfa946f4ecbd8afb  # [osx]
+
+  fn: pandoc.msi  # [win]
+  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-windows-x86_64.msi  # [win]
+  sha256: a22fe0f582c4b11e345c527c3fd066eaef3e7cadb86074a1bce6ddb75a8e243a  # [win]
+
+build:
+   number: 0
+
+requirements:
+  run:
+    - gmp  # [linux64]
+    - zlib  # [linux64]
+
+test:
+  commands:
+    - pandoc --help
+    - pandoc --version
+
+about:
+  home: http://pandoc.org/
+  license: GPL-2.0
+  summary: 'Universal markup converter (repackaged binaries)'
+
+extra:
+  recipe-maintainers:
+    - jankatins
+    - ocefpaf
+    - dhimmel

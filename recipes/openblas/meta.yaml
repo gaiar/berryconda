@@ -1,24 +1,55 @@
+{% set version = "0.3.4" %}
+
 package:
   name: openblas
-  version: 0.2.19
+  version: {{ version }}
 
 source:
-  git_url: https://github.com/xianyi/OpenBLAS.git
-  git_tag: v0.2.19
+  fn: openblas-{{ version }}.tar.gz
+  url: https://github.com/xianyi/OpenBLAS/archive/v{{ version }}.tar.gz
+  sha256: 4b4b4453251e9edb5f57465bf2b3cf67b19d811d50c8588cdf2ea1f201bb834f
+  patches:
+    - 0002-Fix-gfortran-detection-for-ctng-based-cross-compilers.patch    # [c_compiler == 'gcc']
+    # new in 0.3 series
+    # requires glibc >=2.21; disable for the foreseeable future.
+    #   https://github.com/xianyi/OpenBLAS/blob/dbfd7524cd94fe15930ed2f78b7789f15b22fec0/Makefile.rule#L112-L116
+    # Also, see # https://github.com/xianyi/OpenBLAS/issues/1761
+    # - 0003-turn-TLS-off.patch
+
+    # https://github.com/xianyi/OpenBLAS/issues/1902
+    - p2align_osx.patch
 
 build:
-  number: 0
+  number: 1000
+  skip: true  # [win and vc!=14]
 
 requirements:
+  build:
+    - {{ compiler("c") }}
+    - {{ compiler("fortran") }}
+    - perl
+    - cmake                      # [win]
+    - curl                       # [win]
+    - jom                        # [win]
+  host:
   run:
-    - libgfortran
+
+test:
+  commands:
+    - test -f ${PREFIX}/lib/libopenblas.a                            # [unix]
+    - python -c "import ctypes; ctypes.cdll['${PREFIX}/lib/libopenblas${SHLIB_EXT}']"  # [unix]
+    - if not exist %PREFIX%\\Library\\lib\\openblas.lib exit 1    # [win]
 
 about:
   home: http://www.openblas.net/
-  license: BSD
+  license: BSD 3-Clause
   license_file: LICENSE
-  summary: Optimized BLAS library based on GotoBLAS2
-  description: |
-    OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.
-  doc_url: https://github.com/xianyi/OpenBLAS/wiki
-  dev_url: https://github.com/xianyi/OpenBLAS
+  summary: An optimized BLAS library based on GotoBLAS2 1.13 BSD version.
+
+extra:
+  recipe-maintainers:
+    - gillins
+    - groutr
+    - jakirkham
+    - jschueller
+    - isuruf

@@ -1,0 +1,44 @@
+{% set version = "3.6.1" %}
+
+package:
+  name: lapack
+  version: {{ version }}
+
+source:
+  fn: lapack-{{ version }}.tgz
+  url: http://www.netlib.org/lapack/lapack-{{ version }}.tgz
+  sha1: 7220a9bc9c766cb513007f313b804d88f110c228
+
+  # The next lapack version will have a fix for this.
+  patches:
+    - python-test.patch
+
+build:
+  number: 2
+
+requirements:
+  build:
+    - {{ compiler("c") }}              # [unix]
+    - {{ compiler("m2w64_c") }}        # [win]
+    - {{ compiler("fortran") }}        # [unix]
+    - {{ compiler("m2w64_fortran") }}  # [win]
+    - cmake
+  host:
+  run:
+
+test:
+  commands:
+    - test -f ${PREFIX}/lib/liblapack${SHLIB_EXT}             # [unix]
+    - if not exist %LIBRARY_PREFIX%\\lib\\liblapack.a exit 1  # [win]
+
+about:
+  home: http://www.netlib.org/lapack
+  license: BSD 3-Clause
+  license_file: LICENSE
+  summary: Linear Algebra PACKage
+
+extra:
+  recipe-maintainers:
+    - jakirkham
+    - jschueller
+    - hadim

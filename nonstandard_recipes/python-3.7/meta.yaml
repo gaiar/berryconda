@@ -1,0 +1,57 @@
+{% set version = "3.7.2" %}
+
+package:
+  name: python
+  version: {{ version }}
+
+source:
+  fn: Python-{{ version }}.tgz
+  url: https://www.python.org/ftp/python/{{ version }}/Python-{{ version }}.tgz
+  md5: 02a75015f7cd845e27b85192bb0ca4cb
+
+build:
+  number: 1
+  no_link:
+    - bin/python3.7
+  script_env:
+    - python_branding
+  skip_compile_pyc:
+    - lib/python3.7/test/*bad*.py
+    - lib/python3.7/lib2to3/tests/data/*.py
+  ignore_prefix_files:
+    - lib/libpython3.7m.so.1.0
+    - lib/python3.7/lib-dynload/*.so
+  # We delete the shared libraries.
+  ignore_run_exports:
+      - bzip2
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - make
+    - pkg-config
+    - libffi
+  host:
+    - bzip2
+    - sqlite
+    - xz
+    - zlib
+    - openssl
+    - readline
+    - tk
+    - ncurses
+    - libffi
+
+test:
+  commands:
+    - python -V
+    - python3 -V
+    - 2to3 -h
+    - pydoc -h
+    - python3-config --help
+
+about:
+  home: http://www.python.org/
+  license: PSF
+  summary: General purpose programming language

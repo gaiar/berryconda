@@ -1,6 +1,6 @@
 {% set name = "conda-build" %}
-{% set version = "3.12.1" %}
-{% set sha256 = "8783700aa00b1b19d49d31013af51765d7b4ed148adac82c3c1326ac30c0ed4d" %}
+{% set version = "3.17.6" %}
+{% set sha256 = "6378fa0335016b1e4a355521b352dafdafdf0f0cb223fcd730fae516f59c23f6" %}
 
 package:
   name: {{ name }}
@@ -16,6 +16,7 @@ build:
   entry_points:
     - conda-build = conda_build.cli.main_build:main
     - conda-convert = conda_build.cli.main_convert:main
+    - conda-debug = conda_build.cli.main_debug:main
     - conda-develop = conda_build.cli.main_develop:main
     - conda-index = conda_build.cli.main_index:main
     - conda-inspect = conda_build.cli.main_inspect:main
@@ -37,14 +38,18 @@ requirements:
     - futures            # [py27]
     - glob2 >=0.6        # [py27]
     - jinja2
+    - python-libarchive-c
     - patchelf      # [linux]
     - pkginfo
     - psutil
     - python
+    - py-lief  # [not (win and py2k)]
     - pyyaml
     - scandir            # [py27]
     - six
     - glob2 >=0.6
+    - pytz
+    - tqdm
 
   run_constrained:
     - conda-verify  >=3.1.0
@@ -74,6 +79,8 @@ test:
     - conda-convert -h
     - type -P conda-develop  # [unix]
     - where conda-develop  # [win]
+    - type -P conda-debug  # [unix]
+    - where conda-debug  # [win]
     - conda-develop -h
     - type -P conda-index  # [unix]
     - where conda-index  # [win]

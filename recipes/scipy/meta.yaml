@@ -1,34 +1,42 @@
-{% set version = "1.0.0" %}
+{% set version = "1.2.0" %}
+{% set variant = "openblas" %}
 
 package:
   name: scipy
   version: {{ version }}
 
 source:
-  fn: scipy-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/s/scipy/scipy-{{ version }}.tar.gz
-  sha256: 87ea1f11a0e9ec08c264dc64551d501fa307289460705f6fccd84cbfc7926d10
+  url: https://github.com/scipy/scipy/archive/v{{ version }}.tar.gz
+  sha256: 4bb04ed281c55471b598f69eaa730825ddf613b9d9517834181c707dc4509fce
 
 build:
-  number: 0
+  number: 1200
+  skip: true  # [win]
+  features:
+    - blas_{{ variant }}
 
 requirements:
   build:
+    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
     - python
     - setuptools
     - cython
-    - libgfortran
-    - openblas 0.2.19
-    - numpy 1.11*
+    - blas 1.1 {{ variant }}
+    - openblas
+    - numpy
   run:
     - python
-    - libgfortran
-    - openblas 0.2.19
-    - numpy >=1.11
+    - blas 1.1 {{ variant }}
+    - openblas
+    - {{ pin_compatible('numpy') }}
 
 test:
   requires:
     - pytest
+    - mpmath
 
 about:
   home: http://www.scipy.org/
@@ -40,3 +48,10 @@ about:
     science, and engineering.
   doc_url: http://www.scipy.org/docs.html
   dev_url: https://github.com/scipy/scipy
+
+extra:
+  recipe-maintainers:
+    - jakirkham
+    - msarahan
+    - rgommers
+    - ocefpaf

@@ -5,16 +5,22 @@ unset SUBDIR
 
 ./configure \
         --prefix="${PREFIX}" \
+        --cc=${CC} \
         --disable-doc \
+        --disable-openssl \
+        --enable-avresample \
+        --enable-gnutls \
+        --enable-gpl \
+        --enable-hardcoded-tables \
+        --enable-libfreetype \
+        --enable-libopenh264 \
+        --enable-libx264 \
+        --enable-pic \
+        --enable-pthreads \
         --enable-shared \
         --enable-static \
-        --extra-libs="`pkg-config --libs zlib`" \
-        --enable-pic \
-        --enable-gpl \
         --enable-version3 \
-        --enable-hardcoded-tables \
-        --enable-avresample \
-        --enable-libx264
+        --enable-zlib
 
-make -j ${CPU_COUNT}
-make install
+make -j${CPU_COUNT}
+make install -j${CPU_COUNT}

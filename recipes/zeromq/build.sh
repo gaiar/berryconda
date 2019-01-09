@@ -5,13 +5,11 @@ if [[ `uname` == Darwin ]]; then
   export LDFLAGS="-Wl,-rpath,$PREFIX/lib $LDFLAGS"
 fi
 
-
-if [[ `uname` == Darwin ]]; then
 ./autogen.sh
-fi
 
 ./configure --prefix="$PREFIX" --with-libsodium
 make -j${CPU_COUNT}
+
 make check
 make install
 

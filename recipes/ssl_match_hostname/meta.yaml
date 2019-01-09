@@ -9,13 +9,14 @@ source:
   sha256: 502ad98707319f4a51fa2ca1c677bd659008d27ded9f6380c79e8932e38dcdf2
 
 build:
-  number: 1
-  script: python setup.py install
+  number: 1001
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   skip: True  # [py>=35]
 
 requirements:
-  build:
+  host:
     - python
+    - pip
   run:
     - python
 

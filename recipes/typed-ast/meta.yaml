@@ -1,7 +1,7 @@
 {% set name = "typed-ast" %}
-{% set version = "1.1.0" %}
+{% set version = "1.1.1" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "57fe287f0cdd9ceaf69e7b71a2e94a24b5d268b35df251a88fef5cc241bf73aa" %}
+{% set hash_value = "6cb25dc95078931ecbd6cbcc4178d1b8ae8f2b513ae9c3bd0b7f81c2191db4c6" %}
 
 package:
   name: {{ name|lower }}
@@ -13,8 +13,8 @@ source:
   {{ hash_type }}: {{ hash_value }}
 
 build:
-  number: 0
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  number: 1000
+  script: python -m pip install --no-deps --ignore-installed .
   skip: True  # [py2k]
 
 requirements:
@@ -22,7 +22,7 @@ requirements:
     - {{ compiler('c') }}
   host:
     - python
-    - setuptools
+    - pip
   run:
     - python
 

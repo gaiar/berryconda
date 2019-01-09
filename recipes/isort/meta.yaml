@@ -1,23 +1,21 @@
-{% set name = "isort" %}
 {% set version = "4.3.4" %}
-{% set sha256 = "b9c40e9750f3d77e6e4d441d8b0266cf555e7cdabdcff33c4fd06366ca761ef8" %}
 
 package:
-  name: {{ name }}
+  name: isort
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name [0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/i/isort/isort-{{ version }}.tar.gz
+  sha256: b9c40e9750f3d77e6e4d441d8b0266cf555e7cdabdcff33c4fd06366ca761ef8
 
 build:
-    number: 0
-    script: python -m pip install --no-deps --ignore-installed .
+    number: 1000
+    script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
     entry_points:
     - isort = isort.main:main
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
@@ -51,3 +49,4 @@ extra:
     - goanpeca
     - nicoddemus
     - nehaljwani
+    - ocefpaf

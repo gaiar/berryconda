@@ -1,13 +1,6 @@
 @echo ON
 setlocal enabledelayedexpansion
 
-curl -L -O "https://github.com/opencv/opencv_contrib/archive/%PKG_VERSION%.tar.gz"
-%PYTHON% -c "import tarfile, os; tar = tarfile.open(os.environ['PKG_VERSION'] + '.tar.gz', 'r:gz'); tar.extractall(); tar.close()"
-%PYTHON% -c "import hashlib, os; print(hashlib.sha256(open(os.environ['PKG_VERSION'] + '.tar.gz', 'rb').read()).hexdigest())" > sha256.out
-SET /p CONTRIB_SHA256=<sha256.out
-if NOT "%CONTRIB_SHA256%" == "e94acf39cd4854c3ef905e06516e5f74f26dddfa6477af89558fb40a57aeb444" (
-    exit 1
-)
 
 if "%PY3K%" == "0" (
     echo "Copying stdint.h for windows"
@@ -54,10 +47,11 @@ cmake -LAH -G "NMake Makefiles"                                                 
     -DWITH_OPENCL=0                                                                 ^
     -DWITH_OPENNI=0                                                                 ^
     -DWITH_FFMPEG=1                                                                 ^
+    -DWITH_GSTREAMER=0                                                              ^
     -DWITH_VTK=0                                                                    ^
     -DWITH_QT=5                                                                     ^
     -DINSTALL_C_EXAMPLES=0                                                          ^
-    -DOPENCV_EXTRA_MODULES_PATH=%UNIX_SRC_DIR%/opencv_contrib-%PKG_VERSION%/modules ^
+    -DOPENCV_EXTRA_MODULES_PATH=%UNIX_SRC_DIR%/opencv_contrib/modules               ^
     -DEXECUTABLE_OUTPUT_PATH=%UNIX_LIBRARY_BIN%                                     ^
     -DLIBRARY_OUTPUT_PATH=%UNIX_LIBRARY_BIN%                                        ^
     -DPYTHON_EXECUTABLE=""                                                          ^
@@ -71,27 +65,21 @@ cmake -LAH -G "NMake Makefiles"                                                 
     -DPYTHON2_NUMPY_INCLUDE_DIRS=""                                                 ^
     -DPYTHON2_LIBRARY=""                                                            ^
     -DPYTHON2_PACKAGES_PATH=""                                                      ^
+    -DOPENCV_PYTHON2_INSTALL_PATH=""                                                ^
     -DBUILD_opencv_python3=0                                                        ^
-    -DPYTHON3_EXECUTABLE=""                                                         ^
-    -DPYTHON3_INCLUDE_DIR=""                                                        ^
-    -DPYTHON3_NUMPY_INCLUDE_DIRS=""                                                 ^
-    -DPYTHON3_LIBRARY=""                                                            ^
-    -DPYTHON3_PACKAGES_PATH=""                                                      ^
-    ..
-if errorlevel 1 exit 1
-
-cmake -LAH -G "NMake Makefiles"                                                     ^
     -DPYTHON_EXECUTABLE=%UNIX_PREFIX%/python                                        ^
     -DPYTHON_INCLUDE_DIR=%UNIX_PREFIX%/include                                      ^
     -DPYTHON_PACKAGES_PATH=%UNIX_SP_DIR%                                            ^
     -DPYTHON_LIBRARY=%UNIX_PREFIX%/libs/%PY_LIB%                                    ^
     -DPYTHON_NUMPY_INCLUDE_DIRS=%UNIX_SP_DIR%/numpy/core/include                    ^
-    -DBUILD_opencv_python%PY_MAJOR%=1                                               ^
-    -DPYTHON%PY_MAJOR%_EXECUTABLE=%UNIX_PREFIX%/python                              ^
-    -DPYTHON%PY_MAJOR%_INCLUDE_DIR=%UNIX_PREFIX%/include                            ^
-    -DPYTHON%PY_MAJOR%_NUMPY_INCLUDE_DIRS=%UNIX_SP_DIR%/numpy/core/include          ^
-    -DPYTHON%PY_MAJOR%_LIBRARY=%UNIX_PREFIX%/libs/%PY_LIB%                          ^
-    -DPYTHON%PY_MAJOR%_PACKAGES_PATH=%UNIX_SP_DIR%                                  ^
+    -DBUILD_opencv_python3=1                                                        ^
+    -DOPENCV_SKIP_PYTHON_LOADER=1                                                   ^
+    -DPYTHON3_EXECUTABLE=%UNIX_PREFIX%/python                                       ^
+    -DPYTHON3_INCLUDE_DIR=%UNIX_PREFIX%/include                                     ^
+    -DPYTHON3_NUMPY_INCLUDE_DIRS=%UNIX_SP_DIR%/numpy/core/include                   ^
+    -DPYTHON3_LIBRARY=%UNIX_PREFIX%/libs/%PY_LIB%                                   ^
+    -DPYTHON3_PACKAGES_PATH=%UNIX_SP_DIR%                                           ^
+    -DOPENCV_PYTHON3_INSTALL_PATH=%UNIX_SP_DIR%                                     ^
     ..
 if errorlevel 1 exit 1
 
